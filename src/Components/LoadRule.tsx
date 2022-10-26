@@ -14,7 +14,7 @@ export type CreditRule = {
     groups: string[];
     divisions: string[];
     minimumCredit: number;
-    requiredCredit: string[];
+    requiredCredits: string[];
 }
 
 export type GradePointAverageRule = {

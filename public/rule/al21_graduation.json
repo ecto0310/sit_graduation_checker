@@ -1,6 +1,6 @@
 {
     "title": "2021年度入学 工学部 情報工学科 卒業要件",
-    "rules": [
+    "creditRules": [
         {
             "description": "総単位数 124単位以上",
             "groups": [
@@ -47,7 +47,7 @@
                 "必修"
             ],
             "minimumCredit": 34,
-            "requiredCredit": [
+            "requiredCredits": [
                 "コンピュータ科学序説",
                 "情報工学通論",
                 "離散数学１",
@@ -84,7 +84,7 @@
                 "必修"
             ],
             "minimumCredit": 14,
-            "required": [
+            "requiredCredits": [
                 "線形代数第１",
                 "微分積分第１",
                 "確率と統計第１",
@@ -101,7 +101,7 @@
                 "必修"
             ],
             "minimumCredit": 4,
-            "required": [
+            "requiredCredits": [
                 "Ｒｅａｄｉｎｇ＆ＷｒｉｔｉｎｇI",
                 "Ｌｉｓｔｅｎｉｎｇ＆ＳｐｅａｋｉｎｇI"
             ]
