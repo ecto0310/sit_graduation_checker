@@ -6,6 +6,7 @@ import { Nav } from 'react-bootstrap'
 import { Route, Routes } from "react-router";
 import { NavLink } from 'react-router-dom'
 import CheckRule from './CheckRule';
+import ListCredit from './ListCredit';
 
 type Props = {
     rules: Rules | undefined;
@@ -28,7 +29,7 @@ const CheckMenu: FC<Props> = ({ rules, credits }) => {
                     </Nav>
                     <Routes>
                         <Route path="/check" element={<CheckRule rules={rules} credits={credits} />} />
-                        <Route path="/credits" element={<>aaa</>} />
+                        <Route path="/credits" element={<ListCredit  credits={credits} />} />
                     </Routes >
                 </>
             }
