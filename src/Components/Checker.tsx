@@ -9,9 +9,15 @@ const Checker = () => {
 
     return (
         <>
-            <LoadRule setRules={(data: Rules) => setRules(data)} />
-            <LoadCredit setCredit={(data: Credits) => setCredits(data)} />
-            <CheckMenu rules={rules} credits={credits} />
+            <div className="mt-2">
+                <LoadRule setRules={(data: Rules) => setRules(data)} />
+            </div>
+            <div className="mt-2">
+                <LoadCredit setCredit={(data: Credits) => setCredits(data)} />
+            </div>
+            <div className="mt-2">
+                <CheckMenu rules={rules} credits={credits} />
+            </div>
         </>
     );
 };
