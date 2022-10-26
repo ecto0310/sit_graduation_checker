@@ -1,6 +1,10 @@
 [
     {
         "name": "al21_graduation.json",
-        "title": "2021年度入学 工学部 情報工学科 卒業要件"
+        "title": "2021年度入学 工学部 情報工学科 卒業条件"
+    },
+    {
+        "name": "al21_research_start.json",
+        "title": "2021年度入学 工学部 情報工学科 卒業研究着手条件"
     }
 ]
