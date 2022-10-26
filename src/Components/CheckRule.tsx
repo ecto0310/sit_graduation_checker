@@ -21,8 +21,8 @@ const CheckRule: FC<Props> = ({ rules, credits }) => {
 
     return (
         <>
-            <Form.Check type="switch" label="取得予定単位を含める" onClick={(e) => setIsSchedule(!isSchedule)} />
-            <Form.Check type="switch" label="不足単位情報を表示する" onClick={(e) => setIsShortage(!isShortage)} />
+            <Form.Check className="m-1" type="switch" label="取得予定単位を含める" onClick={(e) => setIsSchedule(!isSchedule)} />
+            <Form.Check className="m-1" type="switch" label="不足単位情報を表示する" onClick={(e) => setIsShortage(!isShortage)} />
             <CheckCreditRule rules={rules} credits={credits} isSchedule={isSchedule} isShortage={isShortage} setIsPassCredit={(ok: boolean) => setIsPassCredit(ok)} />
             <CheckGradePointAverageRule rules={rules} credits={credits} isSchedule={isSchedule} setIsPassGradePointAverage={(ok: boolean) => setIsPassGradePointAverage(ok)} />
             <CheckResultRule isPassCredit={isPassCredit} isPassGradePointAverage={isPassGradePointAverage} />
