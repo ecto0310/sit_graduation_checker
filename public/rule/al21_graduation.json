@@ -3,48 +3,60 @@
     "creditRules": [
         {
             "description": "総単位数 124単位以上",
-            "groups": [
-                "全学共通",
-                "数理基礎",
-                "言語",
-                "情報",
-                "人文社会系教養",
-                "体育健康",
-                "工学部共通",
-                "専門",
-                "学科課程外"
-            ],
-            "divisions": [
-                "必修",
-                "選択必修",
-                "選択"
+            "includes": [
+                {
+                    "groups": [
+                        "全学共通",
+                        "数理基礎",
+                        "言語",
+                        "情報",
+                        "人文社会系教養",
+                        "体育健康",
+                        "工学部共通",
+                        "専門",
+                        "学科課程外"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
             ],
             "minimumCredit": 124
         },
         {
             "description": "基礎・教養科目＋工学部共通科目 40単位以上",
-            "groups": [
-                "数理基礎",
-                "言語",
-                "情報",
-                "人文社会系教養",
-                "体育健康",
-                "工学部共通"
-            ],
-            "divisions": [
-                "必修",
-                "選択必修",
-                "選択"
+            "includes": [
+                {
+                    "groups": [
+                        "数理基礎",
+                        "言語",
+                        "情報",
+                        "人文社会系教養",
+                        "体育健康",
+                        "工学部共通"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
             ],
             "minimumCredit": 40
         },
         {
             "description": "専門科目 必修 34単位",
-            "groups": [
-                "専門"
-            ],
-            "divisions": [
-                "必修"
+            "includes": [
+                {
+                    "groups": [
+                        "専門"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
             ],
             "minimumCredit": 34,
             "requiredCredits": [
@@ -65,23 +77,31 @@
         },
         {
             "description": "専門科目 70単位以上",
-            "groups": [
-                "専門"
-            ],
-            "divisions": [
-                "必修",
-                "選択必修",
-                "選択"
+            "includes": [
+                {
+                    "groups": [
+                        "専門"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
             ],
             "minimumCredit": 70
         },
         {
             "description": "数理基礎 必修14単位",
-            "groups": [
-                "数理基礎"
-            ],
-            "divisions": [
-                "必修"
+            "includes": [
+                {
+                    "groups": [
+                        "数理基礎"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
             ],
             "minimumCredit": 14,
             "requiredCredits": [
@@ -94,11 +114,15 @@
         },
         {
             "description": "言語 必修4単位",
-            "groups": [
-                "言語"
-            ],
-            "divisions": [
-                "必修"
+            "includes": [
+                {
+                    "groups": [
+                        "言語"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
             ],
             "minimumCredit": 4,
             "requiredCredits": [
@@ -108,37 +132,49 @@
         },
         {
             "description": "言語 10単位以上",
-            "groups": [
-                "言語"
-            ],
-            "divisions": [
-                "必修",
-                "選択必修",
-                "選択"
+            "includes": [
+                {
+                    "groups": [
+                        "言語"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
             ],
             "minimumCredit": 10
         },
         {
             "description": "人文社会系教養 6単位以上",
-            "groups": [
-                "人文社会系教養"
-            ],
-            "divisions": [
-                "必修",
-                "選択必修",
-                "選択"
+            "includes": [
+                {
+                    "groups": [
+                        "人文社会系教養"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
             ],
             "minimumCredit": 6
         },
         {
             "description": "体育健康 2単位以上",
-            "groups": [
-                "体育健康"
-            ],
-            "divisions": [
-                "必修",
-                "選択必修",
-                "選択"
+            "includes": [
+                {
+                    "groups": [
+                        "体育健康"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
             ],
             "minimumCredit": 2
         }

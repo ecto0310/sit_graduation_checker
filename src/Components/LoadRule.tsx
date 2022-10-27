@@ -10,11 +10,23 @@ export type Rules = {
 }
 
 export type CreditRule = {
+    noSupport: boolean;
     description: string;
-    groups: string[];
-    divisions: string[];
+    includes: CreditIncludeRule[];
+    limits: CreditLimitRule[];
     minimumCredit: number;
     requiredCredits: string[];
+}
+
+export type CreditIncludeRule = {
+    groups: string[];
+    divisions: string[];
+    subjects: string[];
+}
+
+export type CreditLimitRule = {
+    subjects: string[];
+    maximumCredit: number;
 }
 
 export type GradePointAverageRule = {

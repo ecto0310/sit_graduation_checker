@@ -11,6 +11,10 @@ type Props = {
     setIsPassGradePointAverage: (ok: boolean) => void;
 }
 
+export const isCheckGradePointAverage = (rules: Rules, credits: Credits, isSchedule: boolean): boolean => {
+    return true;
+}
+
 
 const CheckGradePointAverageRule: FC<Props> = ({ rules, credits, isSchedule, setIsPassGradePointAverage }) => {
     const calcGradePointAverage = (): number => {

@@ -2,8 +2,8 @@
 import { FC } from 'react';
 
 type Props = {
-    isPassCredit: boolean;
-    isPassGradePointAverage: boolean;
+    isPassCredit: boolean | undefined;
+    isPassGradePointAverage: boolean | undefined;
 }
 
 
@@ -11,7 +11,13 @@ const CheckResultRule: FC<Props> = ({ isPassCredit, isPassGradePointAverage }) =
     return (
         <>
             <h2>結果</h2>
-            {isPassCredit && isPassGradePointAverage ? "OK" : "NG"}
+            {
+                isPassCredit === undefined || isPassGradePointAverage === undefined ?
+                    "unknown" :
+                    isPassCredit && isPassGradePointAverage ?
+                        "OK" :
+                        "NG"
+            }
         </>
     );
 };
