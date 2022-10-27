@@ -6,5 +6,9 @@
     {
         "name": "al21_research_start.json",
         "title": "2021年度入学 工学部 情報工学科 卒業研究着手条件"
+    },
+    {
+        "name": "bv21_graduation.json",
+        "title": "2021年度入学 システム理工学部 数理科学科 卒業条件"
     }
 ]
