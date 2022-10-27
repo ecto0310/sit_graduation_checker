@@ -18,8 +18,9 @@ export const isCheckCreditRule = (rules: Rules, credits: Credits, isSchedule: bo
     if (rules.creditRules.some(creditRule => creditRule.noSupport)) {
         return undefined;
     }
+
     return rules.creditRules.every(creditRule => {
-        const filteredCredits = filterCredits(credits.credits, creditRule, isSchedule);
+        const filteredCredits = filterCredits(globalFilter(credits.credits, rules), creditRule, isSchedule);
         return creditRule.minimumCredit <= filteredCredits.length;
     });
 }
@@ -32,6 +33,25 @@ const filterCredits = (credits: Credit[], creditRule: CreditRule, isSchedule: bo
         )
     );
     creditRule.limits && creditRule.limits.forEach(limit => {
+        let targets = filteredCredits.filter((filteredCredit) => {
+            return limit.subjects.includes(filteredCredit.name);
+        });
+        let countCredits = 0;
+        const filteredTargets = targets.filter((target) => {
+            countCredits += target.count;
+            return countCredits <= limit.maximumCredit;
+        });
+        const nonTarget = filteredCredits.filter((filteredCredit) => {
+            return !limit.subjects.includes(filteredCredit.name);
+        });
+        filteredCredits = nonTarget.concat(filteredTargets);
+    });
+    return filteredCredits;
+}
+
+const globalFilter = (credits: Credit[], rules: Rules): Credit[] => {
+    let filteredCredits = credits
+    rules.limits && rules.limits.forEach(limit => {
         let targets = filteredCredits.filter((filteredCredit) => {
             return limit.subjects.includes(filteredCredit.name);
         });
@@ -74,7 +94,7 @@ const CheckCreditRule: FC<Props> = ({ rules, credits, isSchedule, isShortage }) 
                 <tbody>
                     {
                         rules.creditRules.map((creditRule) => {
-                            const filteredCredits = filterCredits(credits.credits, creditRule, isSchedule);
+                            const filteredCredits = filterCredits(globalFilter(credits.credits, rules), creditRule, isSchedule);
                             const creditCount = filteredCredits.reduce((sum, e) => sum + e.count, 0);
                             return (
                                 <tr>
