@@ -4,9 +4,7 @@ import Form from "react-bootstrap/Form";
 export type Rules = {
     title: string;
     creditRules: CreditRule[];
-    gradePointAverageRule: GradePointAverageRule;
-    passEvaluation: string[];
-    unknownEvaluation: string[];
+    minimumGradePointAverage: number;
 }
 
 export type CreditRule = {
@@ -27,16 +25,6 @@ export type CreditIncludeRule = {
 export type CreditLimitRule = {
     subjects: string[];
     maximumCredit: number;
-}
-
-export type GradePointAverageRule = {
-    evaluationConverts: EvaluationConvert[];
-    minimumGradePointAverage: number;
-}
-
-export type EvaluationConvert = {
-    evaluation: string;
-    gradePoint: number;
 }
 
 type Props = {

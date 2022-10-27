@@ -4,7 +4,7 @@ import { Credits, Credit } from './LoadCredit';
 import { Rules, CreditRule } from './LoadRule';
 
 import Table from 'react-bootstrap/Table';
-import { unknownEvaluation } from './Evaluation';
+import { passEvaluation, unknownEvaluation } from './Evaluation';
 
 type Props = {
     rules: Rules;
@@ -26,7 +26,7 @@ export const isCheckCreditRule = (rules: Rules, credits: Credits, isSchedule: bo
 
 const filterCredits = (credits: Credit[], creditRule: CreditRule, isSchedule: boolean): Credit[] => {
     let filteredCredits = credits.filter((credit) => {
-        return unknownEvaluation.includes(credit.evaluation) ? isSchedule : true;
+        return unknownEvaluation.includes(credit.evaluation) ? isSchedule : passEvaluation.includes(credit.evaluation);
     }).filter((credit) => {
         return creditRule.includes.some((include) => {
             return (include.subjects ? include.subjects.includes(credit.name) : include.groups.includes(credit.group) && include.divisions.includes(credit.division));
