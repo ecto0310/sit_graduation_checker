@@ -24,6 +24,7 @@ yarn start
 {
     // Rule title
     "title": "title",
+    // Credit conditions
     "creditRules": [
         {
             // Rule description
@@ -72,7 +73,22 @@ yarn start
             ]
         },
         ...
-    ]
+    ],
+    // Set limits for specific subjects at global
+    "limits" : [
+        {
+            // Select by subject name
+            "subjects": [
+                "subject name",
+                ...
+            ],
+            // Maximum credits
+            "maximumCredit": 1
+        },
+        ...
+    ],
+    // Minimum GPA Requirement
+    "minimumGradePointAverage": 2
 }
 ```
 

@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 export type Rules = {
     title: string;
     creditRules: CreditRule[];
+    limits: CreditLimitRule[];
     minimumGradePointAverage: number;
 }
 
