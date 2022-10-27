@@ -44,28 +44,20 @@ const LoadRule: FC<Props> = ({ setRules }) => {
     const loadRuleList = () => {
         fetch("rule/rule.json")
             .then(response => response.json())
-            .then(data => {
-                setRuleFiles(data);
-            });
+            .then(data =>setRuleFiles(data));
     };
 
     const loadRuleFile = (rulePath: string) => {
         fetch("rule/" + rulePath)
             .then(response => response.json())
-            .then(data => {
-                setRules(data);
-            });
+            .then(data => setRules(data));
     };
 
     return (
         <>
-            <Form.Select onChange={(e) => loadRuleFile(e.target.value)} onClick={(e) => loadRuleList()}>
+            <Form.Select onChange={e => loadRuleFile(e.target.value)} onClick={e => loadRuleList()}>
                 <option hidden>確認する要件を選択してください</option>
-                {ruleFiles && ruleFiles.map((data) => {
-                    return (
-                        <option value={data.name}>{data.title}</option>
-                    )
-                })}
+                {ruleFiles && ruleFiles.map((data) =><option value={data.name}>{data.title}</option> )}
             </Form.Select>
         </>
     );

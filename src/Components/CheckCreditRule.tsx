@@ -5,6 +5,7 @@ import { Rules, CreditRule } from './LoadRule';
 
 import Table from 'react-bootstrap/Table';
 import { passEvaluation, unknownEvaluation } from './Evaluation';
+import { resultView } from './CheckResultRule';
 
 type Props = {
     rules: Rules;
@@ -14,25 +15,23 @@ type Props = {
 }
 
 export const isCheckCreditRule = (rules: Rules, credits: Credits, isSchedule: boolean): boolean | undefined => {
-    if (rules.creditRules.some((creditRule) => { return creditRule.noSupport })) {
-        console.log("!!!")
+    if (rules.creditRules.some(creditRule => creditRule.noSupport)) {
         return undefined;
     }
-    return rules.creditRules.every((creditRule) => {
+    return rules.creditRules.every(creditRule => {
         const filteredCredits = filterCredits(credits.credits, creditRule, isSchedule);
         return creditRule.minimumCredit <= filteredCredits.length;
     });
 }
 
 const filterCredits = (credits: Credit[], creditRule: CreditRule, isSchedule: boolean): Credit[] => {
-    let filteredCredits = credits.filter((credit) => {
-        return unknownEvaluation.includes(credit.evaluation) ? isSchedule : passEvaluation.includes(credit.evaluation);
-    }).filter((credit) => {
-        return creditRule.includes.some((include) => {
-            return (include.subjects ? include.subjects.includes(credit.name) : include.groups.includes(credit.group) && include.divisions.includes(credit.division));
-        })
-    });
-    creditRule.limits && creditRule.limits.forEach((limit) => {
+    let filteredCredits = credits.filter(credit => unknownEvaluation.includes(credit.evaluation) ? isSchedule : passEvaluation.includes(credit.evaluation)
+    ).filter(credit =>
+        creditRule.includes.some((include) =>
+            include.subjects ? include.subjects.includes(credit.name) : include.groups.includes(credit.group) && include.divisions.includes(credit.division)
+        )
+    );
+    creditRule.limits && creditRule.limits.forEach(limit => {
         let targets = filteredCredits.filter((filteredCredit) => {
             return limit.subjects.includes(filteredCredit.name);
         });
@@ -51,30 +50,18 @@ const filterCredits = (credits: Credit[], creditRule: CreditRule, isSchedule: bo
 
 const CheckCreditRule: FC<Props> = ({ rules, credits, isSchedule, isShortage }) => {
     const filterNonPassRequiredCredits = (creditRule: CreditRule, filteredCredits: Credit[]): string[] => {
-        return (creditRule.requiredCredits ?
-            creditRule.requiredCredits.filter((requiredCredit) => {
-                return !filteredCredits.some((filteredCredit) => {
-                    return filteredCredit.name === requiredCredit;
-                });
-            }) :
+        return creditRule.requiredCredits ?
+            creditRule.requiredCredits.filter(requiredCredit =>
+                !filteredCredits.some(filteredCredit =>
+                    filteredCredit.name === requiredCredit
+                )
+            ) :
             []
-        );
-    }
-
-    const resultView = (result: boolean | undefined): string => {
-        return (
-            result === undefined ?
-                "unknown" :
-                result ?
-                    "OK" :
-                    "NG"
-        );
-    }
+    };
 
     return (
         <>
             <h2>単位数 {resultView(isCheckCreditRule(rules, credits, isSchedule))}</h2>
-
             <Table striped bordered>
                 <thead>
                     <tr>
@@ -88,7 +75,7 @@ const CheckCreditRule: FC<Props> = ({ rules, credits, isSchedule, isShortage }) 
                     {
                         rules.creditRules.map((creditRule) => {
                             const filteredCredits = filterCredits(credits.credits, creditRule, isSchedule);
-                            const creditCount = filteredCredits.reduce((sum, e) => { return sum + e.count; }, 0);
+                            const creditCount = filteredCredits.reduce((sum, e) => sum + e.count, 0);
                             return (
                                 <tr>
                                     <td>{creditRule.description}</td>

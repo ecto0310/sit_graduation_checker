@@ -4,6 +4,7 @@ import { Credits } from './LoadCredit';
 import { Rules } from './LoadRule';
 import Table from 'react-bootstrap/Table';
 import { evaluationConverts } from './Evaluation';
+import { resultView } from './CheckResultRule';
 
 type Props = {
     rules: Rules;
@@ -27,13 +28,7 @@ const calcGradePointAverage = (credits: Credits): number => {
     return sumGradePoint / sumCredit;
 }
 
-
 const CheckGradePointAverageRule: FC<Props> = ({ rules, credits, isSchedule }) => {
-    const resultView = (result: boolean | undefined): string => {
-        return (result === undefined ? "unknown" : result ? "OK" : "NG");
-    }
-
-
     return (
         <>
             <h2>GPA {resultView(isCheckGradePointAverage(rules, credits, isSchedule))}</h2>

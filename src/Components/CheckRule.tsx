@@ -12,7 +12,6 @@ type Props = {
     credits: Credits;
 }
 
-
 const CheckRule: FC<Props> = ({ rules, credits }) => {
     const [isSchedule, setIsSchedule] = useState<boolean>(false);
     const [isShortage, setIsShortage] = useState<boolean>(false);
