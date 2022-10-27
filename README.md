@@ -59,7 +59,7 @@ yarn start
                         ...
                     ],
                     // Maximum credits
-                    "maximumCredit": 1;
+                    "maximumCredit": 1
                 },
                 ...
             ]
