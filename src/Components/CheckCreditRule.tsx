@@ -5,7 +5,7 @@ import { Rules, CreditRule } from './LoadRule';
 
 import Table from 'react-bootstrap/Table';
 import { passEvaluation, unknownEvaluation } from './Evaluation';
-import { resultView } from './CheckResultRule';
+import CheckMark from './CheckMark';
 
 type Props = {
     rules: Rules;
@@ -75,7 +75,7 @@ export const globalFilter = (credits: Credits, rules: Rules): Credits => {
         });
         filteredCredits = nonTarget.concat(filteredTargets);
     });
-    credits.credits= filteredCredits
+    credits.credits = filteredCredits
     return credits;
 }
 
@@ -92,7 +92,7 @@ const CheckCreditRule: FC<Props> = ({ rules, credits, isSchedule, isShortage }) 
 
     return (
         <>
-            <h2>単位数 {resultView(isCheckCreditRules(rules, credits, isSchedule))}</h2>
+            <h2>単位数 <CheckMark result={isCheckCreditRules(rules, credits, isSchedule)} /></h2>
             <Table striped bordered>
                 <thead>
                     <tr>
@@ -147,7 +147,7 @@ const CheckCreditRule: FC<Props> = ({ rules, credits, isSchedule, isShortage }) 
                                             }
                                         </>
                                     }
-                                    <td>{resultView(result)}</td>
+                                    <td><CheckMark result={result} /></td>
                                 </tr>
                             )
                         })
