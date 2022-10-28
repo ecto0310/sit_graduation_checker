@@ -1,6 +1,6 @@
 rules="[]"
 
-for file_path in $(find "public/rule" -type f | gawk -F/ '{print $NF}'); do
+for file_path in $(find "public/rule" -type f | sort | gawk -F/ '{print $NF}'); do
   title=$(cat "public/rule/${file_path}" | jq -r .title)
 
   rules=$(
