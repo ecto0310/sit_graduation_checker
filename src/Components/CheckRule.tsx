@@ -3,7 +3,7 @@ import { FC, useState } from 'react';
 import { Credits } from './LoadCredit';
 import { Rules } from './LoadRule';
 import Form from "react-bootstrap/Form";
-import CheckCreditRule, { isCheckCreditRule } from './CheckCreditRule';
+import CheckCreditRule, { isCheckCreditRules } from './CheckCreditRule';
 import CheckGradePointAverageRule, { isCheckGradePointAverage } from './CheckGradePointAverageRule';
 import CheckResultRule from './CheckResultRule';
 
@@ -22,7 +22,7 @@ const CheckRule: FC<Props> = ({ rules, credits }) => {
             <Form.Check className="m-1" type="switch" label="不足単位情報を表示する" onClick={(e) => setIsShortage(!isShortage)} />
             <CheckCreditRule rules={rules} credits={credits} isSchedule={isSchedule} isShortage={isShortage} />
             <CheckGradePointAverageRule rules={rules} credits={credits} isSchedule={isSchedule} />
-            <CheckResultRule isPassCredit={isCheckCreditRule(rules, credits, isSchedule)} isPassGradePointAverage={isCheckGradePointAverage(rules, credits, isSchedule)} />
+            <CheckResultRule isPassCredit={isCheckCreditRules(rules, credits, isSchedule)} isPassGradePointAverage={isCheckGradePointAverage(rules, credits, isSchedule)} />
         </>
     );
 };

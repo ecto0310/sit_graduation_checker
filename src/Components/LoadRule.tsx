@@ -14,6 +14,7 @@ export type CreditRule = {
     includes: CreditIncludeRule[];
     limits: CreditLimitRule[];
     minimumCredit: number;
+    minimumSubject: number;
     requiredCredits: string[];
 }
 
@@ -45,7 +46,7 @@ const LoadRule: FC<Props> = ({ setRules }) => {
     const loadRuleList = () => {
         fetch("rules.json")
             .then(response => response.json())
-            .then(data =>setRuleFiles(data));
+            .then(data => setRuleFiles(data));
     };
 
     const loadRuleFile = (rulePath: string) => {
@@ -58,7 +59,7 @@ const LoadRule: FC<Props> = ({ setRules }) => {
         <>
             <Form.Select onChange={e => loadRuleFile(e.target.value)} onClick={e => loadRuleList()}>
                 <option hidden>確認する要件を選択してください</option>
-                {ruleFiles && ruleFiles.map((data) =><option value={data.name}>{data.title}</option> )}
+                {ruleFiles && ruleFiles.map((data) => <option value={data.name}>{data.title}</option>)}
             </Form.Select>
         </>
     );
