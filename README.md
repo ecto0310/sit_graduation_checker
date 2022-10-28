@@ -100,7 +100,7 @@ yarn start
         // File name
         "name": "al21_graduation.json",
         // Display title
-        "title": "2021年度入学 工学部 情報工学科 卒業条件"
+        "title": "title"
     },
     ...
 ]
