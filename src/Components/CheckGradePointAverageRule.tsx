@@ -4,7 +4,7 @@ import { Credits } from './LoadCredit';
 import { Rules } from './LoadRule';
 import Table from 'react-bootstrap/Table';
 import { evaluationConverts } from './Evaluation';
-import { resultView } from './CheckResultRule';
+import CheckMark from './CheckMark';
 
 type Props = {
     rules: Rules;
@@ -31,7 +31,7 @@ const calcGradePointAverage = (credits: Credits): number => {
 const CheckGradePointAverageRule: FC<Props> = ({ rules, credits, isSchedule }) => {
     return (
         <>
-            <h2>GPA {resultView(isCheckGradePointAverage(rules, credits, isSchedule))}</h2>
+            <h2>GPA <CheckMark result={isCheckGradePointAverage(rules, credits, isSchedule)} /></h2>
             {rules.minimumGradePointAverage === undefined ?
                 "GPAに関する条件はありません" :
                 isSchedule ?
@@ -48,7 +48,7 @@ const CheckGradePointAverageRule: FC<Props> = ({ rules, credits, isSchedule }) =
                             <tr>
                                 <td>{rules.minimumGradePointAverage}以上</td>
                                 <td>{calcGradePointAverage(credits)}</td>
-                                <td>{rules.minimumGradePointAverage <= calcGradePointAverage(credits) ? "OK" : "NG"}</td>
+                                <td><CheckMark result={isCheckGradePointAverage(rules, credits, isSchedule)} /></td>
                             </tr>
                         </tbody>
                     </Table>
