@@ -25,8 +25,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "./create_rule_list.sh & react-scripts start",
+    "build": "./create_rule_list.sh & react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

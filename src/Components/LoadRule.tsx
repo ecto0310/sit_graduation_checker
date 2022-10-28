@@ -43,7 +43,7 @@ const LoadRule: FC<Props> = ({ setRules }) => {
 
 
     const loadRuleList = () => {
-        fetch("rule/rule.json")
+        fetch("rules.json")
             .then(response => response.json())
             .then(data =>setRuleFiles(data));
     };
