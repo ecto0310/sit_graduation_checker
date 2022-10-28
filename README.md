@@ -49,6 +49,7 @@ yarn start
                         "division name",
                         ...
                     ]
+                    //
                 }
             ],
             // Set limits for specific subjects
@@ -64,8 +65,12 @@ yarn start
                 },
                 ...
             ]
-            // Number of credits required
+            // Required number
+            // Number of credits required (Priority use)
             "minimumCredit": 124,
+            // Number of subjects required
+            "minimumSubject": 124,
+            //
             // Displays a list of unearned credits
             "requiredCredits": [
                 "subject name",
