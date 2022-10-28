@@ -92,14 +92,14 @@ yarn start
 }
 ```
 
-### rule list json format
+### rule list json format (auto generate)
 
 ```json
 [
     {
         // File name
         "name": "al21_graduation.json",
-        // Display title (Recommended to be aligned with rule files)
+        // Display title
         "title": "2021年度入学 工学部 情報工学科 卒業条件"
     },
     ...
