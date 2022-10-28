@@ -20,7 +20,7 @@ export const isCheckCreditRules = (rules: Rules, credits: Credits, isSchedule: b
     }
 
     return rules.creditRules.every(creditRule => {
-        return isCheckCreditRule(creditRule, globalFilter(credits.credits, rules), isSchedule);
+        return isCheckCreditRule(creditRule, credits.credits, isSchedule);
     });
 }
 
@@ -28,9 +28,10 @@ const isCheckCreditRule = (creditRule: CreditRule, credits: Credit[], isSchedule
     if (creditRule.noSupport) {
         return undefined;
     }
+    const filteredCredits = filterCredits(credits, creditRule, isSchedule);
     const isCheckCredit = (creditRule.minimumCredit !== undefined);
-    const creditCount = credits.reduce((sum, e) => sum + e.count, 0);
-    const subjectCount = credits.length;
+    const creditCount = filteredCredits.reduce((sum, e) => sum + e.count, 0);
+    const subjectCount = filteredCredits.length;
     return (creditRule.noSupport ? undefined : isCheckCredit ? creditRule.minimumCredit <= creditCount : creditRule.minimumSubject <= subjectCount);
 }
 
@@ -58,8 +59,8 @@ const filterCredits = (credits: Credit[], creditRule: CreditRule, isSchedule: bo
     return filteredCredits;
 }
 
-const globalFilter = (credits: Credit[], rules: Rules): Credit[] => {
-    let filteredCredits = credits
+export const globalFilter = (credits: Credits, rules: Rules): Credits => {
+    let filteredCredits = credits.credits
     rules.limits && rules.limits.forEach(limit => {
         let targets = filteredCredits.filter((filteredCredit) => {
             return limit.subjects.includes(filteredCredit.name);
@@ -74,7 +75,8 @@ const globalFilter = (credits: Credit[], rules: Rules): Credit[] => {
         });
         filteredCredits = nonTarget.concat(filteredTargets);
     });
-    return filteredCredits;
+    credits.credits= filteredCredits
+    return credits;
 }
 
 const CheckCreditRule: FC<Props> = ({ rules, credits, isSchedule, isShortage }) => {
@@ -103,11 +105,11 @@ const CheckCreditRule: FC<Props> = ({ rules, credits, isSchedule, isShortage }) 
                 <tbody>
                     {
                         rules.creditRules.map((creditRule) => {
-                            const filteredCredits = filterCredits(globalFilter(credits.credits, rules), creditRule, isSchedule);
+                            const filteredCredits = filterCredits(credits.credits, creditRule, isSchedule);
                             const isCheckCredit = (creditRule.minimumCredit !== undefined);
                             const creditCount = filteredCredits.reduce((sum, e) => sum + e.count, 0);
                             const subjectCount = filteredCredits.length;
-                            const result = isCheckCreditRule(creditRule, globalFilter(credits.credits, rules), isSchedule);
+                            const result = isCheckCreditRule(creditRule, credits.credits, isSchedule);
                             return (
                                 <tr>
                                     <td>{creditRule.description}</td>
