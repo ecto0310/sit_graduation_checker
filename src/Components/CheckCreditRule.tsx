@@ -103,7 +103,7 @@ const CheckCreditRule: FC<Props> = ({ rules, credits, isSchedule, isShortage }) 
                                     {isShortage &&
                                         <td>
                                             <>
-                                                {creditRule.minimumCredit - creditCount}
+                                                {Math.max(0, creditRule.minimumCredit - creditCount)}
                                                 {
                                                     filterNonPassRequiredCredits(creditRule, filteredCredits)?.map((nonPassRequiredCredit) => {
                                                         return (<ul>{nonPassRequiredCredit}</ul>);
