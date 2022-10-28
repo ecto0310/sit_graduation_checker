@@ -18,6 +18,8 @@ yarn start
 
 ## Rule develop
 
+Create a json file according to the rule json format below and place it under 'public/rule/'.
+
 ### rule json format
 
 ```json
