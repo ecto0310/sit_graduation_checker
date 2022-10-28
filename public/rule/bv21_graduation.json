@@ -3,51 +3,105 @@
     "creditRules": [
         {
             "description": "総単位数 124単位以上",
-            "groups": [
-                "総合科目",
-                "英語",
-                "共通科目（学部基礎）",
-                "共通科目（システム・情報）",
-                "専門"
+            "includes": [
+                {
+                    "groups": [
+                        "総合科目",
+                        "英語",
+                        "共通科目（学部基礎）",
+                        "共通科目（システム・情報）",
+                        "専門"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択"
+                    ]
+                }
             ],
-            "divisions": [
-                "必修",
-                "選択"
-            ],
-            "minimumCredit": 124
+            "minimumCredit": 124,
+            "limits": [
+                {
+                    "subjects": [
+                        "体育実技（フライングディスク）",
+                        "体育実技（テニス）",
+                        "体育実技（卓球）",
+                        "体育実技（バドミントン）",
+                        "体育実技（ソフトボール）",
+                        "体育実技（バレーボール）",
+                        "体育実技（バスケットボール）",
+                        "体育実技（ゴルフI）",
+                        "体育実技（ゴルフII）",
+                        "体育実技（スキー）",
+                        "体育実技（フットサル）",
+                        "体育実技（軟式野球）"
+                    ],
+                    "maximumCredit": 2
+                }
+            ]
         },
         {
             "description": "共通科目 58単位以上",
-            "groups": [
-                "総合科目",
-                "英語",
-                "共通科目（学部基礎）",
-                "共通科目（システム・情報）"
+            "includes": [
+                {
+                    "groups": [
+                        "総合科目",
+                        "英語",
+                        "共通科目（学部基礎）",
+                        "共通科目（システム・情報）"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択"
+                    ]
+                }
             ],
-            "divisions": [
-                "必修",
-                "選択"
-            ],
-            "minimumCredit": 58
+            "minimumCredit": 58,
+            "limits": [
+                {
+                    "subjects": [
+                        "体育実技（フライングディスク）",
+                        "体育実技（テニス）",
+                        "体育実技（卓球）",
+                        "体育実技（バドミントン）",
+                        "体育実技（ソフトボール）",
+                        "体育実技（バレーボール）",
+                        "体育実技（バスケットボール）",
+                        "体育実技（ゴルフI）",
+                        "体育実技（ゴルフII）",
+                        "体育実技（スキー）",
+                        "体育実技（フットサル）",
+                        "体育実技（軟式野球）"
+                    ],
+                    "maximumCredit": 2
+                }
+            ]
         },
         {
             "description": "専門科目 54単位以上",
-            "groups": [
-                "専門"
-            ],
-            "divisions": [
-                "必修",
-                "選択"
+            "includes": [
+                {
+                    "groups": [
+                        "専門"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択"
+                    ]
+                }
             ],
             "minimumCredit": 54
         },
         {
             "description": "専門科目 必修 18単位以上",
-            "groups": [
-                "専門"
-            ],
-            "divisions": [
-                "必修"
+            "includes": [
+                {
+                    "groups": [
+                        "専門"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
             ],
             "minimumCredit": 18,
             "requiredCredits": [
@@ -62,44 +116,79 @@
         },
         {
             "description": "総合科目 12単位以上",
-            "groups": [
-                "総合科目"
+            "includes": [
+                {
+                    "groups": [
+                        "総合科目"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択"
+                    ]
+                }
             ],
-            "divisions": [
-                "必修",
-                "選択"
+            "limits": [
+                {
+                    "subjects": [
+                        "体育実技（フライングディスク）",
+                        "体育実技（テニス）",
+                        "体育実技（卓球）",
+                        "体育実技（バドミントン）",
+                        "体育実技（ソフトボール）",
+                        "体育実技（バレーボール）",
+                        "体育実技（バスケットボール）",
+                        "体育実技（ゴルフI）",
+                        "体育実技（ゴルフII）",
+                        "体育実技（スキー）",
+                        "体育実技（フットサル）",
+                        "体育実技（軟式野球）"
+                    ],
+                    "maximumCredit": 2
+                }
             ],
             "minimumCredit": 12
         },
         {
             "description": "英語 8単位以上",
-            "groups": [
-                "英語"
-            ],
-            "divisions": [
-                "必修",
-                "選択"
+            "includes": [
+                {
+                    "groups": [
+                        "英語"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択"
+                    ]
+                }
             ],
             "minimumCredit": 8
         },
         {
             "description": "学部基礎科目 20単位以上",
-            "groups": [
-                "共通科目（学部基礎）"
-            ],
-            "divisions": [
-                "必修",
-                "選択"
+            "includes": [
+                {
+                    "groups": [
+                        "共通科目（学部基礎）"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択"
+                    ]
+                }
             ],
             "minimumCredit": 20
         },
         {
             "description": "学部基礎科目 必修 14単位",
-            "groups": [
-                "共通科目（学部基礎）"
-            ],
-            "divisions": [
-                "必修"
+            "includes": [
+                {
+                    "groups": [
+                        "共通科目（学部基礎）"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
             ],
             "minimumCredit": 14,
             "requiredCredits": [
@@ -114,22 +203,30 @@
         },
         {
             "description": "システム・情報科目 16単位以上",
-            "groups": [
-                "共通科目（システム・情報）"
-            ],
-            "divisions": [
-                "必修",
-                "選択"
+            "includes": [
+                {
+                    "groups": [
+                        "共通科目（システム・情報）"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択"
+                    ]
+                }
             ],
             "minimumCredit": 16
         },
         {
             "description": "システム・情報科目 必修 12単位",
-            "groups": [
-                "共通科目（システム・情報）"
-            ],
-            "divisions": [
-                "必修"
+            "includes": [
+                {
+                    "groups": [
+                        "共通科目（システム・情報）"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
             ],
             "minimumCredit": 12,
             "requiredCredits": [
@@ -143,46 +240,5 @@
                 "システム工学演習Ｂ"
             ]
         }
-    ],
-    "gradePointAverageRule": {
-        "evaluationConverts": [
-            {
-                "evaluation": "S",
-                "gradePoint": 4
-            },
-            {
-                "evaluation": "A",
-                "gradePoint": 4
-            },
-            {
-                "evaluation": "B",
-                "gradePoint": 3
-            },
-            {
-                "evaluation": "C",
-                "gradePoint": 2
-            },
-            {
-                "evaluation": "D",
-                "gradePoint": 1
-            },
-            {
-                "evaluation": "F",
-                "gradePoint": 0
-            }
-        ],
-        "minimumGradePointAverage": 2
-    },
-    "passEvaluation": [
-        "S",
-        "A",
-        "B",
-        "C",
-        "N"
-    ],
-    "unknownEvaluation": [
-        "G",
-        "#",
-        "-"
     ]
 }
