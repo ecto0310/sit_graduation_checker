@@ -14,7 +14,7 @@ export type Credit = {
 }
 
 type Props = {
-    setCredit: (data: Credits) => void
+    setCredit: (data: Credits) => void;
 }
 
 const LoadCredit: FC<Props> = ({ setCredit }) => {
