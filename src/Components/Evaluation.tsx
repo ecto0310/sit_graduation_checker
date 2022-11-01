@@ -1,6 +1,6 @@
-export const unknownEvaluation = ["G", "#", "-"];
-export const passEvaluation = ["S", "A", "B", "C", "N"];
-export const failEvaluation = ["D", "F"];
+export const unknownEvaluations = ["G", "#", "-"];
+export const passEvaluations = ["S", "A", "B", "C", "N"];
+export const evaluations = [...unknownEvaluations, ...passEvaluations, "D", "F"].sort().reverse();
 
 export const evaluationConverts = [
     {

@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusSquare, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
-import { failEvaluation, passEvaluation, unknownEvaluation } from './Evaluation';
+import { evaluations } from './Evaluation';
 
 type Props = {
     credits: Credits;
@@ -19,7 +19,7 @@ const ListCredit: FC<Props> = ({ credits, setCredit }) => {
     const [name, setName] = useState<string>("");
     const [division, setDivision] = useState<string>("");
     const [count, setCount] = useState<number>(0);
-    const [evaluation, setEvaluation] = useState<string>("");
+    const [evaluation, setEvaluation] = useState<string>(evaluations[0]);
 
     const removeCredit = (index: number) => {
         const deletedCredits = { ...credits };
@@ -63,9 +63,7 @@ const ListCredit: FC<Props> = ({ credits, setCredit }) => {
                         </td>
                         <td>
                             <Form.Select onChange={e => setEvaluation(e.target.value)} >
-                                {unknownEvaluation.map((data) => <option value={data}>{data}</option>)}
-                                {passEvaluation.map((data) => <option value={data}>{data}</option>)}
-                                {failEvaluation.map((data) => <option value={data}>{data}</option>)}
+                                {evaluations.map((data) => <option value={data}>{data}</option>)}
                             </Form.Select>
                         </td>
                         <td><Button variant="primary" onClick={() => { addCredit(group, name, division, count, evaluation) }}><FontAwesomeIcon icon={faPlusSquare} /></Button></td>
