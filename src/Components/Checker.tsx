@@ -16,7 +16,7 @@ const Checker = () => {
                 <LoadCredit setCredit={(data: Credits) => setCredits(data)} />
             </div>
             <div className="mt-2">
-                <CheckMenu rules={rules} credits={credits} />
+                <CheckMenu rules={rules} credits={credits} setCredit={(data: Credits) => setCredits(data)} />
             </div>
         </>
     );

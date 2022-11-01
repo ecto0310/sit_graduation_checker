@@ -1,5 +1,6 @@
 export const unknownEvaluation = ["G", "#", "-"];
 export const passEvaluation = ["S", "A", "B", "C", "N"];
+export const failEvaluation = ["D", "F"];
 
 export const evaluationConverts = [
     {

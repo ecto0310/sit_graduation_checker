@@ -11,10 +11,11 @@ import ListCredit from './ListCredit';
 type Props = {
     rules: Rules | undefined;
     credits: Credits | undefined;
+    setCredit: (data: Credits) => void;
 }
 
 
-const CheckMenu: FC<Props> = ({ rules, credits }) => {
+const CheckMenu: FC<Props> = ({ rules, credits, setCredit }) => {
     return (
         <>
             {rules && credits &&
@@ -29,7 +30,7 @@ const CheckMenu: FC<Props> = ({ rules, credits }) => {
                     </Nav>
                     <Routes>
                         <Route path="/check" element={<CheckRule rules={rules} credits={credits} />} />
-                        <Route path="/credits" element={<ListCredit  credits={credits} />} />
+                        <Route path="/credits" element={<ListCredit credits={credits} setCredit={setCredit} />} />
                     </Routes >
                 </>
             }
