@@ -1,24 +1,14 @@
 import { FC } from 'react';
-import Form from "react-bootstrap/Form";
-
-export type Credits = {
-    credits: Credit[];
-}
-
-export type Credit = {
-    group: string;
-    division: string;
-    name: string;
-    count: number;
-    evaluation: string;
-}
+import { Credits } from './Credit';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 type Props = {
-    setCredit: (data: Credits) => void;
+    setCredits: (data: Credits) => void
 }
 
-const LoadCredit: FC<Props> = ({ setCredit }) => {
-
+const LoadCreditView: FC<Props> = ({ setCredits }) => {
     const loadCreditFile = (e: React.ChangeEvent<HTMLInputElement>) => {
         var file = e.currentTarget.files![0];
         file.text().then(text => {
@@ -35,16 +25,24 @@ const LoadCredit: FC<Props> = ({ setCredit }) => {
                 }
                 return a.evaluation < b.evaluation ? 1 : -1;
             });
-            setCredit(data);
+            setCredits(data);
         });
     }
 
     return (
         <>
-            <Form.Control type="file" onChange={loadCreditFile} />
+            <Form>
+                <Row>
+                    <Col sm="2">
+                        <Form.Label>単位情報ファイル</Form.Label>
+                    </Col>
+                    <Col sm="10">
+                        <Form.Control type="file" onChange={loadCreditFile} />
+                    </Col>
+                </Row>
+            </Form>
         </>
     );
 };
 
-
-export default LoadCredit;
+export default LoadCreditView;

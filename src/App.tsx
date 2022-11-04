@@ -1,11 +1,11 @@
-import Checker from "./Components/Checker";
+import IndexView from "./Components/IndexView";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavigationBar from "./Components/NavigationBar";
-import Usage from "./Components/Usage";
+import UsageView from "./Components/UsageView";
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
       </Alert>
         <BrowserRouter>
           <Routes>
-            <Route path="/usage" element={<Usage />} />
-            <Route path="/*" element={<Checker />} />
+            <Route path="/usage" element={<UsageView />} />
+            <Route path="/*" element={<IndexView />} />
           </Routes>
         </BrowserRouter>
       </Container>
