@@ -23,13 +23,13 @@ const LoadRuleView: FC<Props> = ({ setRules }) => {
     const [isPresetRuleFile, setIsPresetRuleFile] = useState<boolean>(true);
 
     const loadRuleList = () => {
-        fetch("ruleFiles.json")
+        fetch(process.env.PUBLIC_URL + "ruleFiles.json")
             .then(response => response.json())
             .then(data => setRuleFiles(data));
     };
 
     const loadRuleFile = (rulePath: string) => {
-        fetch("rules/" + rulePath)
+        fetch(process.env.PUBLIC_URL + "rules/" + rulePath)
             .then(response => response.json())
             .then(data => setRules(data));
     };
