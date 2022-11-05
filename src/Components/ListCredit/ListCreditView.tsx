@@ -120,7 +120,7 @@ const ListCreditView: FC<Props> = ({ credits, setCredits }) => {
                     {
                         credits.credits.map((credit, index) => {
                             return (
-                                <tr key={credit.name}>
+                                <tr>
                                     <td>{credit.group}</td>
                                     <td>{credit.division}</td>
                                     <td>{credit.name}</td>
