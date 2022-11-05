@@ -48,7 +48,7 @@ export const limitCredit = (limits: CreditLimitRule[], validCredits: Credit[]): 
             return countCredits <= limit.maximumCredit;
         });
         let noTargets = validCredits.filter((validCredit) => {
-            return limit.subjects.includes(validCredit.name);
+            return !limit.subjects.includes(validCredit.name);
         });
         validCredits = noTargets.concat(filteredTargets);
     });
