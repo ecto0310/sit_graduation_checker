@@ -23,31 +23,27 @@ const ListCreditView: FC<Props> = ({ credits, setCredits }) => {
     const [period, setPeriod] = useState<string>("未定");
 
     const compare = (l: Credit, r: Credit, newSortedBy: string, equal: boolean): number => {
-        if (newSortedBy === "group") {
-            if (l.group === r.group) {
-                return compare(l, r, "division", true);
-            }
-            return l.group < r.group ? 1 : -1;
-        } else if (newSortedBy === "division") {
-            if (l.division === r.division) {
-                return equal ? compare(l, r, "name", true) : compare(l, r, "group", true);
-            }
-            return l.division < r.division ? 1 : -1;
-        } else if (newSortedBy === "name") {
-            if (l.name === r.name) {
-                return equal ? compare(l, r, "count", true) : compare(l, r, "group", true);
-            }
-            return l.name < r.name ? 1 : -1;
-        } else if (newSortedBy === "count") {
-            if (l.count === r.count) {
-                return equal ? compare(l, r, "evaluation", true) : compare(l, r, "group", true);
-            }
-            return l.count < r.count ? 1 : -1;
-        } else if (newSortedBy === "evaluation") {
-            if (l.evaluation === r.evaluation) {
-                return equal ? compare(l, r, "period", true) : compare(l, r, "group", true);
-            }
-            return evaluations.indexOf(l.evaluation) < evaluations.indexOf(r.evaluation) ? 1 : -1;
+        switch (newSortedBy) {
+            case "group":
+                if (l.group === r.group) {
+                    return compare(l, r, "division", true);
+                }
+                return l.group < r.group ? 1 : -1;
+            case "name":
+                if (l.name === r.name) {
+                    return equal ? compare(l, r, "count", true) : compare(l, r, "group", true);
+                }
+                return l.name < r.name ? 1 : -1;
+            case "count":
+                if (l.count === r.count) {
+                    return equal ? compare(l, r, "evaluation", true) : compare(l, r, "group", true);
+                }
+                return l.count < r.count ? 1 : -1;
+            case "evaluation":
+                if (l.evaluation === r.evaluation) {
+                    return equal ? compare(l, r, "period", true) : compare(l, r, "group", true);
+                }
+                return evaluations.indexOf(l.evaluation) < evaluations.indexOf(r.evaluation) ? 1 : -1;
         }
         if (l.period === r.period) {
             return compare(l, r, "group", true);
