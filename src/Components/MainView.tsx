@@ -27,7 +27,7 @@ const MainView: FC<Props> = ({ rules, credits, setCredits }) => {
             </Nav>
             <div className="mt-2">
                 <Routes>
-                    <Route path="/check" element={<CheckRuleView rules={rules!!} credits={credits || { credits: [] }} />} />
+                    <Route path="/check" element={<CheckRuleView rules={rules || { title: "", creditRules: [], limits: [], minimumGradePointAverage: 0 }} credits={credits || { credits: [] }} />} />
                     <Route path="/credit" element={<ListCreditView credits={credits || { credits: [] }} setCredits={setCredits} />} />
                 </Routes >
             </div>
