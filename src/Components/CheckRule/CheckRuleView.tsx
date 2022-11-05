@@ -2,11 +2,11 @@ import { FC, useState } from 'react';
 import { Credits } from '../Credit/Credit';
 import { Rules } from '../Rule/Rule';
 import Form from "react-bootstrap/Form";
-import CheckCreditView from './CheckCreditView';
-import { CheckCreditRules, limitCredit } from './CheckCredit';
-import CheckGradePointAverageView from './CheckGradePointAverageView';
+import CheckCreditView from './Credit/CheckCreditView';
+import { CheckCreditRules, limitCredit } from './Credit/CheckCredit';
+import CheckGradePointAverageView from './GradePointAverage/CheckGradePointAverageView';
 import CheckResultView from './CheckResultView';
-import { CheckGradePointAverageRules } from './CheckGradePointAverage';
+import { CheckGradePointAverageRules } from './GradePointAverage/CheckGradePointAverage';
 
 type Props = {
     rules: Rules;

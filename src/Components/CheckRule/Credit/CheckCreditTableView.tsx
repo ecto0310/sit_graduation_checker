@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { Credit } from '../Credit/Credit';
-import { CreditRule } from '../Rule/Rule';
-import CheckMark, { Result } from './CheckMark';
+import { Credit } from '../../Credit/Credit';
+import { CreditRule } from '../../Rule/Rule';
+import CheckMark, { Result } from '../CheckMark';
 import { CheckCreditRule } from './CheckCredit';
 import Table from 'react-bootstrap/Table';
 

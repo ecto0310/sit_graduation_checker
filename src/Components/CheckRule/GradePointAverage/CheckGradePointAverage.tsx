@@ -1,7 +1,7 @@
-import { Credit } from "../Credit/Credit";
-import { evaluationConverts } from "../Evaluation";
-import { Rules } from "../Rule/Rule";
-import { Result } from "./CheckMark";
+import { Credit } from "../../Credit/Credit";
+import { evaluationConverts } from "../../Evaluation";
+import { Rules } from "../../Rule/Rule";
+import { Result } from "../CheckMark";
 
 
 export const CheckGradePointAverageRules = (rules: Rules, credits: Credit[], isSchedule: boolean): Result => {

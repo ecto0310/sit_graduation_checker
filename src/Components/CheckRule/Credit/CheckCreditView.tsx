@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { Credit } from '../Credit/Credit';
-import { Rules } from '../Rule/Rule';
-import CheckMark from './CheckMark';
+import { Credit } from '../../Credit/Credit';
+import { Rules } from '../../Rule/Rule';
+import CheckMark from '../CheckMark';
 import CheckCreditTableView from './CheckCreditTableView';
 import { CheckCreditRules } from './CheckCredit';
 

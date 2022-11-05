@@ -1,7 +1,7 @@
-import { Credit } from "../Credit/Credit";
-import { passEvaluations, unknownEvaluations } from "../Evaluation";
-import { CreditRule, CreditLimitRule } from "../Rule/Rule";
-import { Result } from "./CheckMark";
+import { Credit } from "../../Credit/Credit";
+import { passEvaluations, unknownEvaluations } from "../../Evaluation";
+import { CreditRule, CreditLimitRule } from "../../Rule/Rule";
+import { Result } from "../CheckMark";
 
 export const CheckCreditRules = (creditRules: CreditRule[], validCredits: Credit[], isSchedule: boolean): Result => {
     return creditRules.reduce((n, creditRule) => {

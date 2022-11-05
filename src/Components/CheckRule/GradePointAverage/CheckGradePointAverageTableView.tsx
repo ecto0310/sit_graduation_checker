@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { Credit } from '../Credit/Credit';
-import { Rules } from '../Rule/Rule';
-import CheckMark from './CheckMark';
+import { Credit } from '../../Credit/Credit';
+import { Rules } from '../../Rule/Rule';
+import CheckMark from '../CheckMark';
 import Table from 'react-bootstrap/Table';
 import { CheckGradePointAverageRule } from './CheckGradePointAverage';
 
