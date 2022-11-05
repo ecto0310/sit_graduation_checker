@@ -1,19 +1,21 @@
 import { Credit } from "../Credit/Credit";
+import { passEvaluations, unknownEvaluations } from "../Evaluation";
 import { CreditRule, CreditLimitRule } from "../Rule/Rule";
 import { Result } from "./CheckMark";
 
-export const CheckCreditRules = (creditRules: CreditRule[], validCredits: Credit[]): Result => {
+export const CheckCreditRules = (creditRules: CreditRule[], validCredits: Credit[], isSchedule: boolean): Result => {
     return creditRules.reduce((n, creditRule) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const [result, _filteredCredits, _subjectCount, _creditCount] = CheckCreditRule(creditRule, validCredits);
-        return Math.max(n,result);
+        const [result, _filteredCredits, _subjectCount, _creditCount] = CheckCreditRule(creditRule, validCredits, isSchedule);
+        return Math.max(n, result);
     }, Result.Pass);
 }
 
-export const CheckCreditRule = (creditRule: CreditRule, validCredits: Credit[]): [Result, Credit[], number, number] => {
+export const CheckCreditRule = (creditRule: CreditRule, credits: Credit[], isSchedule: boolean): [Result, Credit[], number, number] => {
     if (creditRule.noSupport) {
         return [Result.Unknown, [], 0, 0];
     }
+    const validCredits = credits.filter((credit) => passEvaluations.includes(credit.evaluation) || (isSchedule && unknownEvaluations.includes(credit.evaluation)))
     const filteredCredits = filterCredits(creditRule, validCredits);
     const subjectCount = filterCredits.length;
     const creditCount = filteredCredits.reduce((sum, e) => sum + e.count, 0);

@@ -7,11 +7,12 @@ import Table from 'react-bootstrap/Table';
 
 type Props = {
     creditRules: CreditRule[];
-    validCredits: Credit[];
+    credits: Credit[];
+    isSchedule: boolean;
     isShortage: boolean;
 }
 
-const CheckCreditTableView: FC<Props> = ({ creditRules, validCredits, isShortage }) => {
+const CheckCreditTableView: FC<Props> = ({ creditRules, credits, isSchedule, isShortage }) => {
     const tableRows = (creditRule: CreditRule, result: Result, filteredCredits: Credit[], subjectCount: number, creditCount: number): JSX.Element => {
         let requiredCredits = (
             <>
@@ -75,7 +76,7 @@ const CheckCreditTableView: FC<Props> = ({ creditRules, validCredits, isShortage
                 <tbody>
                     {
                         creditRules.map((creditRule) => {
-                            const [result, filteredCredits, subjectCount, creditCount] = CheckCreditRule(creditRule, validCredits);
+                            const [result, filteredCredits, subjectCount, creditCount] = CheckCreditRule(creditRule, credits, isSchedule);
                             return (tableRows(creditRule, result, filteredCredits, subjectCount, creditCount));
                         })
                     }
