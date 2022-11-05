@@ -29,6 +29,11 @@ const ListCreditView: FC<Props> = ({ credits, setCredits }) => {
                     return compare(l, r, "division", true);
                 }
                 return l.group < r.group ? 1 : -1;
+            case "division":
+                if (l.division === r.division) {
+                    return equal ? compare(l, r, "name", true) : compare(l, r, "group", true);
+                }
+                return l.division < r.division ? 1 : -1;
             case "name":
                 if (l.name === r.name) {
                     return equal ? compare(l, r, "count", true) : compare(l, r, "group", true);
