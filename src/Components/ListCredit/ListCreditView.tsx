@@ -46,7 +46,7 @@ const ListCreditView: FC<Props> = ({ credits, setCredits }) => {
                 return evaluations.indexOf(l.evaluation) < evaluations.indexOf(r.evaluation) ? 1 : -1;
         }
         if (l.period === r.period) {
-            return compare(l, r, "group", true);
+            return equal ? 1 : compare(l, r, "group", true);
         }
         return l.period < r.period ? 1 : -1;
     };
