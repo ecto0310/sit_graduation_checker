@@ -1,6 +1,6 @@
-const blob = new Blob([JSON.stringify({
+var blob = new Blob([JSON.stringify({
     "credits": [...document.querySelectorAll("#list > tbody:nth-child(1) > tr:nth-child(n + 2)")].map((e) => {
-        return { "group": e.children[0].innerText, "name": e.children[1].innerText, "division": e.children[3].innerText, "count": parseInt(e.children[4].innerText), "evaluation": e.children[6].innerText[0] };
+        return { "group": e.children[0].innerText, "name": e.children[1].innerText, "division": e.children[3].innerText, "count": parseInt(e.children[4].innerText), "evaluation": e.children[6].innerText[0], "period": e.children[8].innerText + "年度 " + e.children[9].innerText.substr(0, 2) };
     })
 })], { type: 'application/json' });
 

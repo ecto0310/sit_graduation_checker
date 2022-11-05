@@ -8,4 +8,5 @@ export type Credit = {
     name: string;
     count: number;
     evaluation: string;
+    period: string;
 }
