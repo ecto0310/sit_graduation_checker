@@ -4,6 +4,7 @@ import { Result } from "./CheckMark";
 
 export const CheckCreditRules = (creditRules: CreditRule[], validCredits: Credit[]): Result => {
     return creditRules.reduce((n, creditRule) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const [result, _filteredCredits, _subjectCount, _creditCount] = CheckCreditRule(creditRule, validCredits);
         return Math.max(n,result);
     }, Result.Pass);
