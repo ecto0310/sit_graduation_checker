@@ -1,4 +1,4 @@
-export default function Home() {
+const IndexPage = () => {
   return (
     <>
       <div>
@@ -6,3 +6,6 @@ export default function Home() {
     </>
   )
 }
+
+
+export default IndexPage;
