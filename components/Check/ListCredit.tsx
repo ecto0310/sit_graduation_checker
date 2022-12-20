@@ -28,7 +28,7 @@ const ListCredit = ({ credits }: ListCreditProps) => {
                                     <td>{credit.division}</td>
                                     <td>{credit.name}</td>
                                     <td>{credit.count}</td>
-                                    <td>{credit.evaluation}</td>
+                                    <td>{credit.grade}</td>
                                     <td>{credit.period}</td>
                                 </tr>
                             )

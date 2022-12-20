@@ -47,6 +47,6 @@ export type MinimumCreditRule = {
 }
 
 export type MinimumCreditRuleTarget = {
-    group: string[];
+    groups: string[];
     divisions: string[];
 }

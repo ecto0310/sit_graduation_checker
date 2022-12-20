@@ -7,6 +7,6 @@ export type Credit = {
     name: string;
     division: string;
     count: number;
-    evaluation: string;
+    grade: string;
     period: string;
 }
