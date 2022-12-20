@@ -16,3 +16,37 @@ export type RuleFile = {
     name: string;
     file: string;
 }
+
+export type Rules = {
+    title: string;
+    creditInfo: CreditInfo;
+    rules: Rule[];
+}
+
+export type CreditInfo = {
+    groups: string[];
+    divisions: string[];
+    gradePoint: gradePoint[];
+    passGrade: string[];
+    failGrade: string[];
+    unknownGrade: string[];
+}
+
+export type gradePoint = {
+    grade: string;
+    point: number;
+}
+
+export type Rule = MinimumCreditRule;
+
+export type MinimumCreditRule = {
+    type: string;
+    description: string;
+    targets: MinimumCreditRuleTarget[];
+    minimumCount: number;
+}
+
+export type MinimumCreditRuleTarget = {
+    group: string[];
+    divisions: string[];
+}
