@@ -1,8 +1,11 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { Alert, Nav } from 'react-bootstrap'
 import ListCredit from "../../components/Check/ListCredit";
 import ListRule from "../../components/Check/ListRule";
-import SelectCredit, { Credits } from "../../components/Check/SelectCredit";
+import MainTab from "../../components/Check/MainTab";
+import SelectCredit from "../../components/Check/SelectCredit";
+import { Credits } from "../../types/credits";
 import { Rules } from "../../types/rules";
 
 const CheckPage = () => {
@@ -10,6 +13,7 @@ const CheckPage = () => {
 
     const [credits, setCredits] = useState<Credits>();
     const [rules, setRules] = useState<Rules>();
+    const [mode, setMode] = useState<string>("check");
 
     useEffect(() => {
         if (router.query.ruleFile !== undefined && rules === undefined) {
@@ -25,11 +29,15 @@ const CheckPage = () => {
                 <SelectCredit credits={credits} setCredits={setCredits} />
             </div>
             <div>
-                {
-                    rules &&
-                    <ListRule credits={credits || { credits: [] }} rules={rules} />
-                }
-                <ListCredit credits={credits || { credits: [] }} />
+                <Nav fill variant="tabs" className="mb-2">
+                    <Nav.Item >
+                        <Nav.Link disabled={rules === undefined} active={mode === "check"} onClick={(e) => setMode("check")} >要件チェック</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item >
+                        <Nav.Link disabled={credits === undefined} active={mode === "credit"} onClick={(e) => setMode("credit")} >単位状況</Nav.Link>
+                    </Nav.Item>
+                </Nav>
+                <MainTab mode={mode} credits={credits} rules={rules} />
             </div>
         </>
     )

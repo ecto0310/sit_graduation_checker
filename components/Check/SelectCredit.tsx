@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { Credits } from '../../types/credits';
 
 type SelectCreditProps = {
-    credits: Credits;
+    credits?: Credits;
     setCredits: (credits: Credits) => void;
 }
 
