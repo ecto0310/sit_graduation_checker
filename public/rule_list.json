@@ -1,0 +1,22 @@
+{
+    "years": [
+        {
+            "name": "2022",
+            "departments": [
+                {
+                    "name": "工学部 情報工学科",
+                    "rules": [
+                        {
+                            "name": "卒業要件",
+                            "file": "al21_graduation.json"
+                        },
+                        {
+                            "name": "卒業研究着手条件",
+                            "file": "al21_research_start.json"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
