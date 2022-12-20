@@ -2,23 +2,11 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useEffect } from 'react';
+import { Credits } from '../../types/credits';
 
 type SelectCreditProps = {
     credits: Credits;
     setCredits: (credits: Credits) => void;
-}
-
-export type Credits = {
-    credits: Credit[];
-}
-
-type Credit = {
-    group: string;
-    name: string;
-    division: string;
-    count: number;
-    evaluation: string;
-    period: string;
 }
 
 const SelectCredit = ({ credits, setCredits }: SelectCreditProps) => {

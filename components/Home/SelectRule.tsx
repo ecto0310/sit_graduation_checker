@@ -4,46 +4,28 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-
-type RuleFiles = {
-    years: Year[];
-}
-
-type Year = {
-    name: string;
-    departments: Department[];
-}
-
-type Department = {
-    name: string;
-    rules: Rule[];
-}
-
-type Rule = {
-    name: string;
-    file: string;
-}
+import { Department, RuleFile, PresetRuleFiles, Year } from '../../types/rules';
 
 const SelectRule = () => {
     const router = useRouter();
 
-    const [ruleFiles, setRuleFiles] = useState<RuleFiles>();
+    const [presetRuleFiles, setPresetRuleFiles] = useState<PresetRuleFiles>();
     const [candidateYear, setCandidateYear] = useState<Year>();
     const [candidateDepartment, setCandidateDepartment] = useState<Department>();
-    const [ruleFile, setRuleFile] = useState<string>();
+    const [ruleFile, setRuleFile] = useState<RuleFile>();
 
     useEffect(() => {
-        if (ruleFiles === undefined) {
-            fetch("/rule_list.json")
+        if (presetRuleFiles === undefined) {
+            fetch("/rules.json")
                 .then(response => response.json())
-                .then(data => { setRuleFiles(data) });
+                .then(data => { setPresetRuleFiles(data) });
         }
     });
 
     const checkClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         router.push({
             pathname: "/check",
-            query: { ...router.query, rule: ruleFile }
+            query: { ...router.query, ruleFile: ruleFile?.file }
         });
     }
 
@@ -57,11 +39,11 @@ const SelectRule = () => {
                         </Form.Label>
                     </Col>
                     <Col sm="10">
-                        <Form.Select onChange={e => setCandidateYear(ruleFiles!.years!.find((year) => { return year.name == e.target.value; }))}>
+                        <Form.Select onChange={e => setCandidateYear(presetRuleFiles!.years!.find((year) => { return year.name == e.target.value; }))}>
                             <option hidden>入学年度</option>
                             {
-                                ruleFiles &&
-                                ruleFiles.years.map((year) => <option key={year.name} value={year.name}>{year.name}</option>)
+                                presetRuleFiles &&
+                                presetRuleFiles.years.map((year) => <option key={year.name} value={year.name}>{year.name}</option>)
                             }
                         </Form.Select>
                     </Col>
@@ -89,11 +71,11 @@ const SelectRule = () => {
                         </Form.Label>
                     </Col>
                     <Col sm="10">
-                        <Form.Select onChange={e => setRuleFile(candidateDepartment?.rules.find((rule) => { return rule.file == e.target.value; })?.file)}>
+                        <Form.Select onChange={e => setRuleFile(candidateDepartment?.ruleFiles.find((ruleFile) => { return ruleFile.file == e.target.value; }))}>
                             <option hidden>条件データ</option>
                             {
                                 candidateDepartment &&
-                                candidateDepartment.rules.map((rule) => <option key={rule.file} value={rule.file}>{rule.name}</option>)
+                                candidateDepartment.ruleFiles.map((ruleFile) => <option key={ruleFile.file} value={ruleFile.file}>{ruleFile.name}</option>)
                             }
                         </Form.Select>
                     </Col>
