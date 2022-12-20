@@ -26,27 +26,33 @@ export type Rules = {
 export type CreditInfo = {
     groups: string[];
     divisions: string[];
-    gradePoint: gradePoint[];
+    gradePoint: GradePoint[];
     passGrade: string[];
     failGrade: string[];
     unknownGrade: string[];
 }
 
-export type gradePoint = {
+export type GradePoint = {
     grade: string;
     point: number;
 }
 
-export type Rule = MinimumCreditRule;
+export type Rule = MinimumCreditRule | MinimumGPARule;
 
 export type MinimumCreditRule = {
-    type: string;
+    type: "minimumCredit";
     description: string;
     targets: MinimumCreditRuleTarget[];
-    minimumCount: number;
+    minimum: number;
 }
 
 export type MinimumCreditRuleTarget = {
     groups: string[];
     divisions: string[];
+}
+
+export type MinimumGPARule = {
+    type: "minimumGPA";
+    description: string;
+    minimum: number;
 }

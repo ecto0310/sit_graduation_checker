@@ -84,7 +84,7 @@
                     ]
                 }
             ],
-            "minimumCount": 124
+            "minimum": 124
         },
         {
             "type": "minimumCredit",
@@ -106,7 +106,7 @@
                     ]
                 }
             ],
-            "minimumCount": 40
+            "minimum": 40
         },
         {
             "type": "minimumCredit",
@@ -121,7 +121,7 @@
                     ]
                 }
             ],
-            "minimumCount": 34,
+            "minimum": 34,
             "requireSubject": [
                 "コンピュータ科学序説",
                 "情報工学通論",
@@ -153,7 +153,7 @@
                     ]
                 }
             ],
-            "minimumCount": 70
+            "minimum": 70
         },
         {
             "type": "minimumCredit",
@@ -168,7 +168,7 @@
                     ]
                 }
             ],
-            "minimumCount": 14,
+            "minimum": 14,
             "requireSubject": [
                 "線形代数第１",
                 "微分積分第１",
@@ -190,7 +190,7 @@
                     ]
                 }
             ],
-            "minimumCount": 4,
+            "minimum": 4,
             "requireSubject": [
                 "Ｒｅａｄｉｎｇ＆ＷｒｉｔｉｎｇI",
                 "Ｌｉｓｔｅｎｉｎｇ＆ＳｐｅａｋｉｎｇI"
@@ -211,7 +211,7 @@
                     ]
                 }
             ],
-            "minimumCount": 10
+            "minimum": 10
         },
         {
             "type": "minimumCredit",
@@ -228,7 +228,7 @@
                     ]
                 }
             ],
-            "minimumCount": 6
+            "minimum": 6
         },
         {
             "type": "minimumCredit",
@@ -245,7 +245,12 @@
                     ]
                 }
             ],
-            "minimumCount": 2
+            "minimum": 2
+        },
+        {
+            "type": "minimumGPA",
+            "description": "GPA 2.0以上",
+            "minimum": 2
         }
     ]
 }

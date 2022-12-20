@@ -2,6 +2,7 @@ import Table from 'react-bootstrap/Table';
 import { Credits } from '../../types/credits';
 import { Rules } from '../../types/rules';
 import MinimumCreditRule from './Rule/MinimumCreditRule';
+import MinimumGPARule from './Rule/MinimumGPARule';
 
 type ListRuleProps = {
     credits: Credits;
@@ -28,6 +29,8 @@ const ListRule = ({ credits, rules }: ListRuleProps) => {
                         rules.rules.map((rule, index) => {
                             if (rule.type == "minimumCredit") {
                                 return <MinimumCreditRule key={index} rule={rule} credits={passCredits} />;
+                            } else if (rule.type = "minimumGPA") {
+                                return <MinimumGPARule key={index} rule={rule} gradePoint={rules.creditInfo.gradePoint} credits={credits.credits} />;
                             }
                         })
                     }

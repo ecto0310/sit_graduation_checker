@@ -14,9 +14,9 @@ const MinimumCreditRule = ({ rule, credits }: MinimumCreditRuleProps) => {
         <>
             <tr>
                 <td>{rule.description}</td>
-                <td>{rule.minimumCount}</td>
+                <td>{rule.minimum}</td>
                 <td>{sumCredit}</td>
-                <td>{Math.max(0, rule.minimumCount - sumCredit)}</td>
+                <td>{Math.max(0, rule.minimum - sumCredit)}</td>
                 <td>OK</td>
             </tr>
         </>
