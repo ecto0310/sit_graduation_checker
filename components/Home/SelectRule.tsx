@@ -47,7 +47,6 @@ const SelectRule = () => {
         });
     }
 
-
     return (
         <>
             <Form>
