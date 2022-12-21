@@ -14,7 +14,6 @@ const SelectCredit = ({ credits, setCredits }: SelectCreditProps) => {
     const loadCreditFile = (e: React.ChangeEvent<HTMLInputElement>) => {
         var file = e.currentTarget.files![0];
         file.text().then(data => {
-            sessionStorage.setItem("credit", data);
             setCredits(JSON.parse(data));
         });
     }

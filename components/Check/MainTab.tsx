@@ -9,10 +9,11 @@ import { Rules } from "../../types/Rules/Rules";
 type MainTabProps = {
     mode: string;
     credits?: Credits;
+    setCredits: (credits: Credits) => void;
     rules?: Rules;
 }
 
-const MainTab = ({ mode, credits, rules }: MainTabProps) => {
+const MainTab = ({ mode, credits, setCredits, rules }: MainTabProps) => {
     switch (mode) {
         case "check":
             if (rules) {
@@ -25,7 +26,7 @@ const MainTab = ({ mode, credits, rules }: MainTabProps) => {
             );
         case "credit":
             if (credits) {
-                return <ListCredit credits={credits || { credits: [] }} />;
+                return <ListCredit credits={credits || { credits: [] }} setCredits={setCredits} creditInfo={rules?.creditInfo!} />;
             }
             return (
                 <Alert variant={"primary"} className="mt-1">

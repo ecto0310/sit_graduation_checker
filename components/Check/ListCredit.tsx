@@ -1,11 +1,15 @@
 import Table from 'react-bootstrap/Table';
-import { Credits } from '../../types/Credits';
+import { Credit, Credits } from '../../types/Credits';
+import { CreditInfo } from '../../types/Rules/Rules';
+import AddCredit from './AddCredit';
 
 type ListCreditProps = {
     credits: Credits;
+    setCredits: (credits: Credits) => void;
+    creditInfo: CreditInfo;
 }
 
-const ListCredit = ({ credits }: ListCreditProps) => {
+const ListCredit = ({ credits, setCredits, creditInfo }: ListCreditProps) => {
     return (
         <>
             <Table striped bordered>
@@ -17,9 +21,11 @@ const ListCredit = ({ credits }: ListCreditProps) => {
                         <th>単位数</th>
                         <th>評価</th>
                         <th>期</th>
+                        <th>編集</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <AddCredit addCredit={(credit: Credit) => setCredits({ ...credits, credits: [credit, ...credits.credits] })} creditInfo={creditInfo} />
                     {
                         credits.credits.map((credit, index) => {
                             return (
@@ -30,6 +36,7 @@ const ListCredit = ({ credits }: ListCreditProps) => {
                                     <td>{credit.count}</td>
                                     <td>{credit.grade}</td>
                                     <td>{credit.period}</td>
+                                    <td></td>
                                 </tr>
                             )
                         })
