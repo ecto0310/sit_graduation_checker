@@ -1,7 +1,7 @@
 {
     "years": [
         {
-            "name": "2022",
+            "name": "2021",
             "departments": [
                 {
                     "name": "工学部 情報工学科",
@@ -13,6 +13,15 @@
                         {
                             "name": "卒業研究着手条件",
                             "file": "al21_research_start.json"
+                        }
+                    ]
+                },
+                {
+                    "name": "システム理工学部 数理科学科",
+                    "ruleFiles": [
+                        {
+                            "name": "卒業要件",
+                            "file": "bv21_graduation.json"
                         }
                     ]
                 }
