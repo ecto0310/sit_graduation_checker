@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { Alert, Nav } from 'react-bootstrap'
 import ListCredit from "../../components/Check/ListCredit";
 import ListRule from "../../components/Check/ListRule";
-import { Credits } from "../../types/credits";
-import { Rules } from "../../types/rules";
+import { Credits } from "../../types/Credits";
+import { Rules } from "../../types/Rules/Rules";
 
 type MainTabProps = {
     mode: string;

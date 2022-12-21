@@ -1,14 +1,14 @@
-import { useEffect } from 'react';
-import { Credit } from '../../../types/credits';
-import { GradePoint, MinimumGPARule } from '../../../types/rules';
+import { Credit } from '../../../types/Credits';
+import { GradePoint } from '../../../types/Rules/Rules';
+import { MinimumGPARule } from '../../../types/Rules/MinimumGPARule';
 
 type MinimumGPARuleProps = {
     rule: MinimumGPARule;
-    gradePoint: GradePoint[];
     credits: Credit[];
+    gradePoint: GradePoint[];
 }
 
-export const CalcMinimumGPARule = (rule: MinimumGPARule, gradePoint: GradePoint[], credits: Credit[]): [boolean, number] => {
+export const CalcMinimumGPARule = (rule: MinimumGPARule, credits: Credit[], gradePoint: GradePoint[]): [boolean, number] => {
     const includeCredits = credits.filter((credit) => gradePoint.find((gradePoint) => gradePoint.grade == credit.grade) !== undefined);
     const creditCount = includeCredits.reduce((sum, credit) => sum + credit.count, 0);
     const sumGP = includeCredits.reduce((sum, credit) => sum + gradePoint.find((gradePoint) => gradePoint.grade == credit.grade)!.point * credit.count, 0);
@@ -18,8 +18,8 @@ export const CalcMinimumGPARule = (rule: MinimumGPARule, gradePoint: GradePoint[
     return [result, GPA];
 }
 
-const MinimumGPARule = ({ rule, gradePoint, credits }: MinimumGPARuleProps) => {
-    const [result, GPA] = CalcMinimumGPARule(rule, gradePoint, credits);
+const MinimumGPARule = ({ rule, credits, gradePoint }: MinimumGPARuleProps) => {
+    const [result, GPA] = CalcMinimumGPARule(rule, credits, gradePoint);
 
     return (
         <>

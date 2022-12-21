@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useEffect } from 'react';
-import { Credits } from '../../types/credits';
+import { Credits } from '../../types/Credits';
 
 type SelectCreditProps = {
     credits?: Credits;

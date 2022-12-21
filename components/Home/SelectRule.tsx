@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import { Department, RuleFile, PresetRuleFiles, Year } from '../../types/rules';
+import { Department, RuleFile, PresetRuleFiles, Year } from '../../types/Rules/Rules';
 
 const SelectRule = () => {
     const router = useRouter();

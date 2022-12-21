@@ -1,5 +1,5 @@
 import Table from 'react-bootstrap/Table';
-import { Credits } from '../../types/credits';
+import { Credits } from '../../types/Credits';
 
 type ListCreditProps = {
     credits: Credits;

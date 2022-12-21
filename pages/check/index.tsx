@@ -5,8 +5,8 @@ import ListCredit from "../../components/Check/ListCredit";
 import ListRule from "../../components/Check/ListRule";
 import MainTab from "../../components/Check/MainTab";
 import SelectCredit from "../../components/Check/SelectCredit";
-import { Credits } from "../../types/credits";
-import { Rules } from "../../types/rules";
+import { Credits } from "../../types/Credits";
+import { Rules } from "../../types/Rules/Rules";
 
 const CheckPage = () => {
     const router = useRouter();
@@ -25,6 +25,9 @@ const CheckPage = () => {
 
     return (
         <>
+            <div className="h3">
+                判定項目:{rules?.title || "読み込み中"}
+            </div>
             <div>
                 <SelectCredit credits={credits} setCredits={setCredits} />
             </div>
