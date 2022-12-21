@@ -3,6 +3,7 @@ import Table from 'react-bootstrap/Table';
 import { Credit, Credits } from '../../types/Credits';
 import { Rules } from '../../types/Rules/Rules';
 import { FilterMaximumCredit } from './Filter/FilterMaximumCredit';
+import ResultMark from './ResultMark';
 import MinimumCreditRule, { CalcMinimumCreditRule } from './Rule/MinimumCreditRule';
 import MinimumGPARule, { CalcMinimumGPARule } from './Rule/MinimumGPARule';
 
@@ -24,7 +25,7 @@ const ListRule = ({ credits, rules }: ListRuleProps) => {
 
     const filteredCredit = filter();
 
-    const result = rules.rules
+    const results = rules.rules
         .map((rule) => {
             if (rule.type == "minimumCredit") {
                 const [result] = CalcMinimumCreditRule(rule, filteredCredit, rules.creditInfo.passGrade);
@@ -33,11 +34,13 @@ const ListRule = ({ credits, rules }: ListRuleProps) => {
                 const [result] = CalcMinimumGPARule(rule, filteredCredit, rules.creditInfo.gradePoint);
                 return result;
             }
-        }).every((result) => result);
+        });
+    const result = results.every((result) => result == "pass") ? "pass" :
+        results.some((result) => result == "fail") ? "fail" : "unknown";
 
     return (
         <>
-            {result ? "OK" : "NG"}
+            <h3>判定結果: <ResultMark result={result} /></h3>
             <Table striped bordered>
                 <thead>
                     <tr>

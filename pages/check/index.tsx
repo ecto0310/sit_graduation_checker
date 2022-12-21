@@ -26,7 +26,7 @@ const CheckPage = () => {
     return (
         <>
             <div className="h3">
-                判定項目:{rules?.title || "読み込み中"}
+                判定項目: {rules?.title || "読み込み中"}
             </div>
             <div>
                 <SelectCredit credits={credits} setCredits={setCredits} />

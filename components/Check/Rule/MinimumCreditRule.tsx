@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
 import { Credit } from '../../../types/Credits';
+import { Result } from '../../../types/Result';
 import { MinimumCreditRule } from '../../../types/Rules/MinimumCreditRule';
+import ResultMark from '../ResultMark';
 
 type MinimumCreditRuleProps = {
     rule: MinimumCreditRule;
@@ -8,12 +9,12 @@ type MinimumCreditRuleProps = {
     passGrade: string[];
 }
 
-export const CalcMinimumCreditRule = (rule: MinimumCreditRule, credits: Credit[], passGrade: string[]): [boolean, number, Credit[]] => {
+export const CalcMinimumCreditRule = (rule: MinimumCreditRule, credits: Credit[], passGrade: string[]): [Result, number, Credit[]] => {
     const passCredits = credits.filter((credits) => passGrade.includes(credits.grade));
     const targetCredits = passCredits.filter((credit) => rule.targets.some((target) => target.groups.includes(credit.group) && target.divisions.includes(credit.division)));
     const sumCredit = targetCredits.reduce((sum, targetCredit) => sum + targetCredit.count, 0);
 
-    const result = rule.minimum <= sumCredit;
+    const result = rule.minimum <= sumCredit ? "pass" : "fail";
 
     return [result, sumCredit, passCredits];
 }
@@ -39,7 +40,7 @@ const MinimumCreditRule = ({ rule, credits, passGrade }: MinimumCreditRuleProps)
                         )
                     }
                 </td>
-                <td>{result ? "OK" : "NG"}</td>
+                <td><ResultMark result={result} /></td>
             </tr>
         </>
     )
