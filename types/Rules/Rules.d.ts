@@ -1,10 +1,12 @@
 import { MinimumCreditRule } from './MinimumCreditRule';
 import { MinimumGPARule } from './MinimumGPARule';
+import { MaximumCreditFilter } from './MaximumCreditFilter';
 
 export type Rules = {
     title: string;
     creditInfo: CreditInfo;
     rules: Rule[];
+    filters: Filter[];
 }
 
 export type CreditInfo = {
@@ -22,3 +24,5 @@ export type GradePoint = {
 }
 
 export type Rule = MinimumCreditRule | MinimumGPARule;
+
+export type Filter = MaximumCreditFilter;

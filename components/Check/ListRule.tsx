@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Table from 'react-bootstrap/Table';
-import { Credits } from '../../types/Credits';
+import { Credit, Credits } from '../../types/Credits';
 import { Rules } from '../../types/Rules/Rules';
+import { FilterMaximumCredit } from './Filter/FilterMaximumCredit';
 import MinimumCreditRule, { CalcMinimumCreditRule } from './Rule/MinimumCreditRule';
 import MinimumGPARule, { CalcMinimumGPARule } from './Rule/MinimumGPARule';
 
@@ -11,13 +12,25 @@ type ListRuleProps = {
 }
 
 const ListRule = ({ credits, rules }: ListRuleProps) => {
+    const filter = (): Credit[] => {
+        let validCredits = credits.credits;
+        rules.filters?.forEach((filter) => {
+            if (filter.type == "maximumCredit") {
+                validCredits = FilterMaximumCredit(validCredits, filter)
+            }
+        })
+        return validCredits;
+    }
+
+    const filteredCredit = filter();
+
     const result = rules.rules
         .map((rule) => {
             if (rule.type == "minimumCredit") {
-                const [result] = CalcMinimumCreditRule(rule, credits.credits, rules.creditInfo.passGrade);
+                const [result] = CalcMinimumCreditRule(rule, filteredCredit, rules.creditInfo.passGrade);
                 return result;
-            } else if (rule.type = "minimumGPA") {
-                const [result] = CalcMinimumGPARule(rule, credits.credits, rules.creditInfo.gradePoint);
+            } else if (rule.type == "minimumGPA") {
+                const [result] = CalcMinimumGPARule(rule, filteredCredit, rules.creditInfo.gradePoint);
                 return result;
             }
         }).every((result) => result);
@@ -39,9 +52,9 @@ const ListRule = ({ credits, rules }: ListRuleProps) => {
                     {
                         rules.rules.map((rule, index) => {
                             if (rule.type == "minimumCredit") {
-                                return <MinimumCreditRule key={index} rule={rule} credits={credits.credits} passGrade={rules.creditInfo.passGrade} />
+                                return <MinimumCreditRule key={index} rule={rule} credits={filteredCredit} passGrade={rules.creditInfo.passGrade} />
                             } else if (rule.type = "minimumGPA") {
-                                return <MinimumGPARule key={index} rule={rule} credits={credits.credits} gradePoint={rules.creditInfo.gradePoint} />
+                                return <MinimumGPARule key={index} rule={rule} credits={filteredCredit} gradePoint={rules.creditInfo.gradePoint} />
                             }
                         })
                     }

@@ -34,8 +34,8 @@ const MinimumCreditRule = ({ rule, credits, passGrade }: MinimumCreditRuleProps)
                 <td>
                     {Math.max(0, rule.minimum - sumCredit)}
                     {nonPassrequiredSubjects?.
-                        map((requiredSubject) =>
-                            <ul>{requiredSubject}</ul>
+                        map((requiredSubject, index) =>
+                            <ul key={index}>{requiredSubject}</ul>
                         )
                     }
                 </td>
