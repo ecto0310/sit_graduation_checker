@@ -1,9 +1,44 @@
 {
     "title": "2021年度入学 工学部 情報工学科 卒業研究着手条件",
-    "creditRules": [
+    "creditInfo": {
+        "groups": [
+            "全学共通",
+            "数理基礎",
+            "言語",
+            "情報",
+            "人文社会系教養",
+            "体育健康",
+            "工学部共通",
+            "専門",
+            "学科課程外"
+        ],
+        "divisions": [
+            "必修",
+            "選択必修",
+            "選択"
+        ],
+        "passGrade": [
+            "S",
+            "A",
+            "B",
+            "C",
+            "N"
+        ],
+        "failGrade": [
+            "D",
+            "F"
+        ],
+        "unknownGrade": [
+            "G",
+            "#",
+            "-"
+        ]
+    },
+    "rules": [
         {
+            "type": "minimumCredit",
             "description": "総単位数 110単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "全学共通",
@@ -23,11 +58,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 110
+            "minimum": 110
         },
         {
+            "type": "minimumCredit",
             "description": "専門科目 54単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "専門"
@@ -39,8 +75,7 @@
                     ]
                 }
             ],
-            "minimumCredit": 54
+            "minimum": 54
         }
-    ],
-    "minimumGradePointAverage": 2
+    ]
 }

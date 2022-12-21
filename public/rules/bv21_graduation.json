@@ -1,9 +1,40 @@
 {
     "title": "2021年度入学 システム理工学部 数理科学科 卒業要件",
-    "creditRules": [
+    "creditInfo": {
+        "groups": [
+            "教職科目",
+            "総合科目",
+            "英語",
+            "共通科目（学部基礎）",
+            "共通科目（システム・情報）",
+            "専門"
+        ],
+        "divisions": [
+            "必修",
+            "選択"
+        ],
+        "passGrade": [
+            "S",
+            "A",
+            "B",
+            "C",
+            "N"
+        ],
+        "failGrade": [
+            "D",
+            "F"
+        ],
+        "unknownGrade": [
+            "G",
+            "#",
+            "-"
+        ]
+    },
+    "rules": [
         {
+            "type": "minimumCredit",
             "description": "総単位数 124単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "教職科目",
@@ -19,11 +50,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 124
+            "minimum": 124
         },
         {
+            "type": "minimumCredit",
             "description": "共通科目 58単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "教職科目",
@@ -38,11 +70,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 58
+            "minimum": 58
         },
         {
+            "type": "minimumCredit",
             "description": "専門科目 54単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "専門"
@@ -53,11 +86,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 54
+            "minimum": 54
         },
         {
-            "description": "専門科目 必修 18単位以上",
-            "includes": [
+            "type": "minimumCredit",
+            "description": "専門科目 必修 18単位",
+            "targets": [
                 {
                     "groups": [
                         "専門"
@@ -67,8 +101,8 @@
                     ]
                 }
             ],
-            "minimumCredit": 18,
-            "requiredCredits": [
+            "minimum": 18,
+            "requiredSubjects": [
                 "基礎数理セミナー",
                 "数学基礎",
                 "数理科学セミナー",
@@ -79,8 +113,9 @@
             ]
         },
         {
+            "type": "minimumCredit",
             "description": "総合科目 12単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "総合科目"
@@ -91,11 +126,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 12
+            "minimum": 12
         },
         {
+            "type": "minimumCredit",
             "description": "英語 8単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "英語"
@@ -106,11 +142,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 8
+            "minimum": 8
         },
         {
+            "type": "minimumCredit",
             "description": "学部基礎科目 20単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "共通科目（学部基礎）"
@@ -121,11 +158,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 20
+            "minimum": 20
         },
         {
+            "type": "minimumCredit",
             "description": "学部基礎科目 必修 14単位",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "共通科目（学部基礎）"
@@ -135,8 +173,8 @@
                     ]
                 }
             ],
-            "minimumCredit": 14,
-            "requiredCredits": [
+            "minimum": 14,
+            "requiredSubjects": [
                 "微分積分学I",
                 "微分積分学II",
                 "線形代数I",
@@ -147,8 +185,9 @@
             ]
         },
         {
+            "type": "minimumCredit",
             "description": "システム・情報科目 16単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "共通科目（システム・情報）"
@@ -159,11 +198,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 16
+            "minimum": 16
         },
         {
+            "type": "minimumCredit",
             "description": "システム・情報科目 必修 12単位",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "共通科目（システム・情報）"
@@ -173,8 +213,8 @@
                     ]
                 }
             ],
-            "minimumCredit": 12,
-            "requiredCredits": [
+            "minimum": 12,
+            "requiredSubjects": [
                 "情報処理I",
                 "情報処理演習I",
                 "情報処理II",
@@ -186,23 +226,28 @@
             ]
         }
     ],
-    "limits": [
+    "filters": [
         {
-            "subjects": [
-                "体育実技（フライングディスク）",
-                "体育実技（テニス）",
-                "体育実技（卓球）",
-                "体育実技（バドミントン）",
-                "体育実技（ソフトボール）",
-                "体育実技（バレーボール）",
-                "体育実技（バスケットボール）",
-                "体育実技（ゴルフI）",
-                "体育実技（ゴルフII）",
-                "体育実技（スキー）",
-                "体育実技（フットサル）",
-                "体育実技（軟式野球）"
+            "type": "maximumCredit",
+            "targets": [
+                {
+                    "subjects": [
+                        "体育実技（フライングディスク）",
+                        "体育実技（テニス）",
+                        "体育実技（卓球）",
+                        "体育実技（バドミントン）",
+                        "体育実技（ソフトボール）",
+                        "体育実技（バレーボール）",
+                        "体育実技（バスケットボール）",
+                        "体育実技（ゴルフI）",
+                        "体育実技（ゴルフII）",
+                        "体育実技（スキー）",
+                        "体育実技（フットサル）",
+                        "体育実技（軟式野球）"
+                    ]
+                }
             ],
-            "maximumCredit": 2
+            "maximum": 2
         }
     ]
 }

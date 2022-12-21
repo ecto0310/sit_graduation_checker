@@ -1,9 +1,70 @@
 {
     "title": "2021年度入学 工学部 情報工学科 卒業要件",
-    "creditRules": [
+    "creditInfo": {
+        "groups": [
+            "全学共通",
+            "数理基礎",
+            "言語",
+            "情報",
+            "人文社会系教養",
+            "体育健康",
+            "工学部共通",
+            "専門",
+            "学科課程外"
+        ],
+        "divisions": [
+            "必修",
+            "選択必修",
+            "選択"
+        ],
+        "gradePoint": [
+            {
+                "grade": "S",
+                "point": 4
+            },
+            {
+                "grade": "A",
+                "point": 4
+            },
+            {
+                "grade": "B",
+                "point": 3
+            },
+            {
+                "grade": "C",
+                "point": 2
+            },
+            {
+                "grade": "D",
+                "point": 1
+            },
+            {
+                "grade": "F",
+                "point": 0
+            }
+        ],
+        "passGrade": [
+            "S",
+            "A",
+            "B",
+            "C",
+            "N"
+        ],
+        "failGrade": [
+            "D",
+            "F"
+        ],
+        "unknownGrade": [
+            "G",
+            "#",
+            "-"
+        ]
+    },
+    "rules": [
         {
+            "type": "minimumCredit",
             "description": "総単位数 124単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "全学共通",
@@ -23,11 +84,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 124
+            "minimum": 124
         },
         {
+            "type": "minimumCredit",
             "description": "基礎・教養科目＋工学部共通科目 40単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "数理基礎",
@@ -44,11 +106,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 40
+            "minimum": 40
         },
         {
+            "type": "minimumCredit",
             "description": "専門科目 必修 34単位",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "専門"
@@ -58,8 +121,8 @@
                     ]
                 }
             ],
-            "minimumCredit": 34,
-            "requiredCredits": [
+            "minimum": 34,
+            "requiredSubjects": [
                 "コンピュータ科学序説",
                 "情報工学通論",
                 "離散数学１",
@@ -76,8 +139,9 @@
             ]
         },
         {
+            "type": "minimumCredit",
             "description": "専門科目 70単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "専門"
@@ -89,11 +153,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 70
+            "minimum": 70
         },
         {
+            "type": "minimumCredit",
             "description": "数理基礎 必修14単位",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "数理基礎"
@@ -103,8 +168,8 @@
                     ]
                 }
             ],
-            "minimumCredit": 14,
-            "requiredCredits": [
+            "minimum": 14,
+            "requiredSubjects": [
                 "線形代数第１",
                 "微分積分第１",
                 "確率と統計第１",
@@ -113,8 +178,9 @@
             ]
         },
         {
+            "type": "minimumCredit",
             "description": "言語 必修4単位",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "言語"
@@ -124,15 +190,16 @@
                     ]
                 }
             ],
-            "minimumCredit": 4,
-            "requiredCredits": [
+            "minimum": 4,
+            "requiredSubjects": [
                 "Ｒｅａｄｉｎｇ＆ＷｒｉｔｉｎｇI",
                 "Ｌｉｓｔｅｎｉｎｇ＆ＳｐｅａｋｉｎｇI"
             ]
         },
         {
+            "type": "minimumCredit",
             "description": "言語 10単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "言語"
@@ -144,11 +211,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 10
+            "minimum": 10
         },
         {
+            "type": "minimumCredit",
             "description": "人文社会系教養 6単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "人文社会系教養"
@@ -160,11 +228,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 6
+            "minimum": 6
         },
         {
+            "type": "minimumCredit",
             "description": "体育健康 2単位以上",
-            "includes": [
+            "targets": [
                 {
                     "groups": [
                         "体育健康"
@@ -176,8 +245,12 @@
                     ]
                 }
             ],
-            "minimumCredit": 2
+            "minimum": 2
+        },
+        {
+            "type": "minimumGPA",
+            "description": "GPA 2.0以上",
+            "minimum": 2
         }
-    ],
-    "minimumGradePointAverage": 2
+    ]
 }
