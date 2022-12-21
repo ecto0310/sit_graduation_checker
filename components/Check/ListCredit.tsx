@@ -1,3 +1,6 @@
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import { Credit, Credits } from '../../types/Credits';
 import { CreditInfo } from '../../types/Rules/Rules';
@@ -36,7 +39,7 @@ const ListCredit = ({ credits, setCredits, creditInfo }: ListCreditProps) => {
                                     <td>{credit.count}</td>
                                     <td>{credit.grade}</td>
                                     <td>{credit.period}</td>
-                                    <td></td>
+                                    <td><Button variant="danger" onClick={() => { credits.credits.splice(index, 1); setCredits({ ...credits, credits: credits.credits }) }}><FontAwesomeIcon icon={faTrashAlt} /></Button></td>
                                 </tr>
                             )
                         })
