@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Alert, Nav } from 'react-bootstrap'
-import ListCredit from "../../components/Check/ListCredit";
-import ListRule from "../../components/Check/ListRule";
-import MainTab from "../../components/Check/MainTab";
-import SelectCredit from "../../components/Check/SelectCredit";
-import { Credits } from "../../types/Credits";
-import { Rules } from "../../types/Rules/Rules";
+import ListCredit from "../components/Check/ListCredit";
+import ListRule from "../components/Check/ListRule";
+import MainTab from "../components/Check/MainTab";
+import SelectCredit from "../components/Check/SelectCredit";
+import { Credits } from "../types/Credits";
+import { Rules } from "../types/Rules/Rules";
 
 const CheckPage = () => {
     const router = useRouter();
