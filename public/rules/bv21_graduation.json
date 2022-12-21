@@ -102,7 +102,7 @@
                 }
             ],
             "minimum": 18,
-            "requireSubject": [
+            "requiredSubjects": [
                 "基礎数理セミナー",
                 "数学基礎",
                 "数理科学セミナー",
@@ -174,7 +174,7 @@
                 }
             ],
             "minimum": 14,
-            "requireSubject": [
+            "requiredSubjects": [
                 "微分積分学I",
                 "微分積分学II",
                 "線形代数I",
@@ -214,7 +214,7 @@
                 }
             ],
             "minimum": 12,
-            "requireSubject": [
+            "requiredSubjects": [
                 "情報処理I",
                 "情報処理演習I",
                 "情報処理II",

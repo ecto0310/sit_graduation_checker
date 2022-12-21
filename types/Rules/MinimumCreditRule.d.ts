@@ -3,6 +3,7 @@ export type MinimumCreditRule = {
     description: string;
     targets: MinimumCreditRuleTarget[];
     minimum: number;
+    requiredSubjects: string[];
 }
 
 export type MinimumCreditRuleTarget = {

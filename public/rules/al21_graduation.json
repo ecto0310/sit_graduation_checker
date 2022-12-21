@@ -122,7 +122,7 @@
                 }
             ],
             "minimum": 34,
-            "requireSubject": [
+            "requiredSubjects": [
                 "コンピュータ科学序説",
                 "情報工学通論",
                 "離散数学１",
@@ -169,7 +169,7 @@
                 }
             ],
             "minimum": 14,
-            "requireSubject": [
+            "requiredSubjects": [
                 "線形代数第１",
                 "微分積分第１",
                 "確率と統計第１",
@@ -191,7 +191,7 @@
                 }
             ],
             "minimum": 4,
-            "requireSubject": [
+            "requiredSubjects": [
                 "Ｒｅａｄｉｎｇ＆ＷｒｉｔｉｎｇI",
                 "Ｌｉｓｔｅｎｉｎｇ＆ＳｐｅａｋｉｎｇI"
             ]
