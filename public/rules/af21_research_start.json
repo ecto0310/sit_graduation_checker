@@ -1,0 +1,173 @@
+{
+    "title": "2021年度入学 工学部 情報通信工学科 卒業要件",
+    "creditInfo": {
+        "groups": [
+            "全学共通",
+            "数理基礎",
+            "言語",
+            "情報",
+            "人文社会系教養",
+            "体育健康",
+            "工学部共通",
+            "専門",
+            "学科課程外"
+        ],
+        "divisions": [
+            "必修",
+            "選択必修",
+            "選択"
+        ],
+        "gradePoint": [
+            {
+                "grade": "S",
+                "point": 4
+            },
+            {
+                "grade": "A",
+                "point": 4
+            },
+            {
+                "grade": "B",
+                "point": 3
+            },
+            {
+                "grade": "C",
+                "point": 2
+            },
+            {
+                "grade": "D",
+                "point": 1
+            },
+            {
+                "grade": "F",
+                "point": 0
+            }
+        ],
+        "passGrade": [
+            "S",
+            "A",
+            "B",
+            "C",
+            "N"
+        ],
+        "failGrade": [
+            "D",
+            "F"
+        ],
+        "unknownGrade": [
+            "G",
+            "#",
+            "-"
+        ]
+    },
+    "rules": [
+        {
+            "type": "minimumCredit",
+            "description": "基礎・教養科目および工学部共通科目 必修23単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "数理基礎",
+                        "言語",
+                        "情報",
+                        "人文社会系教養",
+                        "体育健康",
+                        "工学部共通"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
+            ],
+            "minimum": 23
+        },
+        {
+            "type": "minimumCredit",
+            "description": "基礎・教養科目および工学部共通科目 29単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "数理基礎",
+                        "言語",
+                        "情報",
+                        "人文社会系教養",
+                        "体育健康",
+                        "工学部共通"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 29
+        },
+        {
+            "type": "minimumCredit",
+            "description": "専門科目 2年次までに開講される必修10単位",
+            "targets": [
+                {
+                    "type": "subject",
+                    "subjects": [
+                        "情報通信基礎実験Ａ",
+                        "情報通信基礎実験B",
+                        "情報通信基礎実験C",
+                        "情報通信基礎実験D"
+                    ]
+                }
+            ],
+            "minimum": 10,
+            "requiredSubjects": [
+                "情報通信基礎実験Ａ",
+                "情報通信基礎実験B",
+                "情報通信基礎実験C",
+                "情報通信基礎実験D"
+            ]
+        },
+        {
+            "type": "minimumCredit",
+            "description": "専門科目 50単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "専門"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 50
+        },
+        {
+            "type": "minimumCredit",
+            "description": "基礎・教養科目、工学部共通科目、専門科目 108単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "数理基礎",
+                        "言語",
+                        "情報",
+                        "人文社会系教養",
+                        "体育健康",
+                        "工学部共通",
+                        "専門"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 108
+        }
+    ]
+}
