@@ -66,6 +66,7 @@
             "description": "総単位数 124単位以上",
             "targets": [
                 {
+                    "type": "group",
                     "groups": [
                         "全学共通",
                         "数理基礎",
@@ -91,6 +92,7 @@
             "description": "基礎・教養科目＋工学部共通科目 40単位以上",
             "targets": [
                 {
+                    "type": "group",
                     "groups": [
                         "数理基礎",
                         "言語",
@@ -113,6 +115,7 @@
             "description": "専門科目 必修 34単位",
             "targets": [
                 {
+                    "type": "group",
                     "groups": [
                         "専門"
                     ],
@@ -143,6 +146,7 @@
             "description": "専門科目 70単位以上",
             "targets": [
                 {
+                    "type": "group",
                     "groups": [
                         "専門"
                     ],
@@ -160,6 +164,7 @@
             "description": "数理基礎 必修14単位",
             "targets": [
                 {
+                    "type": "group",
                     "groups": [
                         "数理基礎"
                     ],
@@ -182,6 +187,7 @@
             "description": "言語 必修4単位",
             "targets": [
                 {
+                    "type": "group",
                     "groups": [
                         "言語"
                     ],
@@ -201,6 +207,7 @@
             "description": "言語 10単位以上",
             "targets": [
                 {
+                    "type": "group",
                     "groups": [
                         "言語"
                     ],
@@ -218,6 +225,7 @@
             "description": "人文社会系教養 6単位以上",
             "targets": [
                 {
+                    "type": "group",
                     "groups": [
                         "人文社会系教養"
                     ],
@@ -235,6 +243,7 @@
             "description": "体育健康 2単位以上",
             "targets": [
                 {
+                    "type": "group",
                     "groups": [
                         "体育健康"
                     ],

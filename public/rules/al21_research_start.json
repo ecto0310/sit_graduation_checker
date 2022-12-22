@@ -40,6 +40,7 @@
             "description": "総単位数 110単位以上",
             "targets": [
                 {
+                    "type": "group",
                     "groups": [
                         "全学共通",
                         "数理基礎",
@@ -65,6 +66,7 @@
             "description": "専門科目 54単位以上",
             "targets": [
                 {
+                    "type": "group",
                     "groups": [
                         "専門"
                     ],

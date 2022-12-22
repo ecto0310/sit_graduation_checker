@@ -11,7 +11,15 @@ type MinimumCreditRuleProps = {
 
 export const CalcMinimumCreditRule = (rule: MinimumCreditRule, credits: Credit[], passGrade: string[]): [Result, number, Credit[]] => {
     const passCredits = credits.filter((credits) => passGrade.includes(credits.grade));
-    const targetCredits = passCredits.filter((credit) => rule.targets.some((target) => target.groups.includes(credit.group) && target.divisions.includes(credit.division)));
+    const targetCredits = passCredits.filter((credit) =>
+        rule.targets.some((target) => {
+            if (target.type == "group") {
+                return target.groups.includes(credit.group) && target.divisions.includes(credit.division);
+            } else if (target.type == "subject") {
+                return target.subjects.includes(credit.name);
+            }
+        }
+        ));
     const sumCredit = targetCredits.reduce((sum, targetCredit) => sum + targetCredit.count, 0);
 
     const result = rule.minimum <= sumCredit ? "pass" : "fail";

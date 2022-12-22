@@ -4,6 +4,15 @@ export type MaximumCreditFilter = {
     maximum: number;
 }
 
-export type MaximumCreditFilterTarget = {
+export type MaximumCreditFilterTarget = MaximumCreditFilterTargetGroup | MaximumCreditFilterTargetSubject;
+
+export type MaximumCreditFilterTargetGroup = {
+    type: "group";
+    groups: string[];
+    divisions: string[];
+}
+
+export type MaximumCreditFilterTargetSubject = {
+    type: "subject";
     subjects: string[];
 }
