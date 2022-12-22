@@ -5,8 +5,8 @@
 // @description  Export the credit information used by the SIT Graduation Checker.
 // @author       ecto0310
 // @match        https://sgsot4a.sic.shibaura-it.ac.jp/Sgsot/html/Study.html.var?uid=*
-// @updateURL    https://sit-graduation-checker.ecto0310.jp/exporter.user.js
-// @downloadURL  https://sit-graduation-checker.ecto0310.jp/exporter.user.js
+// @updateURL    https://github.com/ecto0310/sit_graduation_checker/raw/main/public/exporter.user.js
+// @downloadURL  https://github.com/ecto0310/sit_graduation_checker/raw/main/public/exporter.user.js
 // @grant        none
 // ==/UserScript==
 
