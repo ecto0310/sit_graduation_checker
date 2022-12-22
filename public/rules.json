@@ -17,6 +17,19 @@
                     ]
                 },
                 {
+                    "name": "工学部 情報通信工学科",
+                    "ruleFiles": [
+                        {
+                            "name": "卒業要件",
+                            "file": "af21_graduation.json"
+                        },
+                        {
+                            "name": "卒業研究着手条件",
+                            "file": "af21_research_start.json"
+                        }
+                    ]
+                },
+                {
                     "name": "システム理工学部 数理科学科",
                     "ruleFiles": [
                         {
