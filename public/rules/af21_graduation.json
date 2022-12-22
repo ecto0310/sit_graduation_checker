@@ -1,0 +1,302 @@
+{
+    "title": "2021年度入学 工学部 情報通信工学科 卒業要件",
+    "creditInfo": {
+        "groups": [
+            "全学共通",
+            "数理基礎",
+            "言語",
+            "情報",
+            "人文社会系教養",
+            "体育健康",
+            "工学部共通",
+            "専門",
+            "学科課程外"
+        ],
+        "divisions": [
+            "必修",
+            "選択必修",
+            "選択"
+        ],
+        "gradePoint": [
+            {
+                "grade": "S",
+                "point": 4
+            },
+            {
+                "grade": "A",
+                "point": 4
+            },
+            {
+                "grade": "B",
+                "point": 3
+            },
+            {
+                "grade": "C",
+                "point": 2
+            },
+            {
+                "grade": "D",
+                "point": 1
+            },
+            {
+                "grade": "F",
+                "point": 0
+            }
+        ],
+        "passGrade": [
+            "S",
+            "A",
+            "B",
+            "C",
+            "N"
+        ],
+        "failGrade": [
+            "D",
+            "F"
+        ],
+        "unknownGrade": [
+            "G",
+            "#",
+            "-"
+        ]
+    },
+    "rules": [
+        {
+            "type": "minimumCredit",
+            "description": "総単位数 124単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "全学共通",
+                        "数理基礎",
+                        "言語",
+                        "情報",
+                        "人文社会系教養",
+                        "体育健康",
+                        "工学部共通",
+                        "専門",
+                        "学科課程外"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 124
+        },
+        {
+            "type": "minimumCredit",
+            "description": "基礎・教養科目＋工学部共通科目 33単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "数理基礎",
+                        "言語",
+                        "情報",
+                        "人文社会系教養",
+                        "体育健康",
+                        "工学部共通"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 33
+        },
+        {
+            "type": "minimumCredit",
+            "description": "専門科目 必修 30単位",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "専門"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
+            ],
+            "minimum": 30,
+            "requiredSubjects": [
+                "情報通信基礎実験Ａ",
+                "情報通信基礎実験B",
+                "情報通信基礎実験C",
+                "情報通信基礎実験D",
+                "情報通信応用実験Ａ",
+                "情報通信応用実験Ｂ",
+                "情報通信ゼミナール",
+                "卒業研究１",
+                "卒業研究２"
+            ]
+        },
+        {
+            "type": "minimumCredit",
+            "description": "専門科目 64単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "専門"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 64
+        },
+        {
+            "type": "minimumCredit",
+            "description": "数理基礎 必修19単位",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "数理基礎"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
+            ],
+            "minimum": 19,
+            "requiredSubjects": [
+                "線形代数第１",
+                "線形代数第２",
+                "微分積分第１",
+                "微分積分第２",
+                "物理学入門",
+                "物理学実験"
+            ]
+        },
+        {
+            "type": "minimumCredit",
+            "description": "言語 必修4単位",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "言語"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
+            ],
+            "minimum": 4,
+            "requiredSubjects": [
+                "Ｒｅａｄｉｎｇ＆ＷｒｉｔｉｎｇI",
+                "Ｌｉｓｔｅｎｉｎｇ＆ＳｐｅａｋｉｎｇI"
+            ]
+        },
+        {
+            "type": "minimumCredit",
+            "description": "言語 6単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "言語"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 6
+        },
+        {
+            "type": "minimumCredit",
+            "description": "人文社会系教養 必修4単位",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "人文社会系教養"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
+            ],
+            "minimum": 4,
+            "requiredSubjects": [
+                "レポートライティング",
+                "技術者の倫理"
+            ]
+        },
+        {
+            "type": "minimumCredit",
+            "description": "人文社会系教養 6単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "人文社会系教養"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 6
+        },
+        {
+            "type": "minimumCredit",
+            "description": "体育健康 2単位以上",
+            "targets": [
+                {
+                    "type": "subject",
+                    "subjects": [
+                        "ゴルフ",
+                        "スキー（スポーツコミュニケーション）",
+                        "テニス（テクニカル）",
+                        "テニス（スポーツコミュニケーション）",
+                        "ソフトボール（テクニカル）",
+                        "ソフトボール（スポーツコミュニケーション）",
+                        "バスケットボール（テクニカル）",
+                        "バスケットボール（スポーツコミュニケーション）",
+                        "バレーボール（テクニカル）",
+                        "バレーボール（スポーツコミュニケーション）",
+                        "バドミントン（テクニカル）",
+                        "バドミントン（スポーツコミュニケーション）",
+                        "卓球（テクニカル）",
+                        "卓球（スポーツコミュニケーション）",
+                        "サッカー（テクニカル）",
+                        "サッカー（スポーツコミュニケーション）",
+                        "フットサル（テクニカル）",
+                        "フットサル（スポーツコミュニケーション）",
+                        "フラッグフットボール（テクニカル）",
+                        "フラッグフットボール（スポーツコミュニケーション）",
+                        "軟式野球（テクニカル）",
+                        "軟式野球（スポーツコミュニケーション）",
+                        "ウェルネス・スポーツ（テクニカル）",
+                        "ウェルネス・スポーツ（スポーツコミュニケーション）",
+                        "フィットネスA",
+                        "フィットネスB"
+                    ]
+                }
+            ],
+            "minimum": 2
+        },
+        {
+            "type": "minimumGPA",
+            "description": "GPA 2.0以上",
+            "minimum": 2
+        }
+    ]
+}
