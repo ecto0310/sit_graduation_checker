@@ -18,7 +18,7 @@ const UsagePage = () => {
                     <li>
                         エクスポート用のスクリプトをインストールします。
                     </li>
-                    <Link href="/exporter.user.js" target="_blank" rel="noopener noreferrer"><Button variant="primary">エクスポート用スクリプト</Button></Link>
+                    <Link href="https://github.com/ecto0310/sit_graduation_checker/raw/main/public/exporter.user.js" target="_blank" rel="noopener noreferrer"><Button variant="primary">エクスポート用スクリプト</Button></Link>
                     <li>
                         下記に学籍番号(アルファベットは小文字)を入力して移動ボタンを押しS*gsotの「現在までに履修している科目」のページに移動します。
                     </li>
