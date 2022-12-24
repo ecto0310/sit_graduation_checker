@@ -1,0 +1,377 @@
+{
+    "title": "2021年度入学 工学部 機械機能工学科 卒業要件",
+    "creditInfo": {
+        "groups": [
+            "全学共通",
+            "数理基礎",
+            "言語",
+            "情報",
+            "人文社会系教養",
+            "体育健康",
+            "工学部共通",
+            "専門",
+            "学科課程外"
+        ],
+        "divisions": [
+            "必修",
+            "選択必修",
+            "選択"
+        ],
+        "gradePoint": [
+            {
+                "grade": "S",
+                "point": 4
+            },
+            {
+                "grade": "A",
+                "point": 4
+            },
+            {
+                "grade": "B",
+                "point": 3
+            },
+            {
+                "grade": "C",
+                "point": 2
+            },
+            {
+                "grade": "D",
+                "point": 1
+            },
+            {
+                "grade": "F",
+                "point": 0
+            }
+        ],
+        "passGrade": [
+            "S",
+            "A",
+            "B",
+            "C",
+            "N"
+        ],
+        "failGrade": [
+            "D",
+            "F"
+        ],
+        "unknownGrade": [
+            "G",
+            "#",
+            "-"
+        ]
+    },
+    "rules": [
+        {
+            "type": "minimumCredit",
+            "description": "総単位数 124単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "全学共通",
+                        "数理基礎",
+                        "言語",
+                        "情報",
+                        "人文社会系教養",
+                        "体育健康",
+                        "工学部共通",
+                        "専門",
+                        "学科課程外"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 124
+        },
+        {
+            "type": "minimumCredit",
+            "description": "基礎・教養科目＋工学部共通科目 52単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "数理基礎",
+                        "言語",
+                        "情報",
+                        "人文社会系教養",
+                        "体育健康",
+                        "工学部共通"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 52
+        },
+        {
+            "type": "minimumCredit",
+            "description": "専門科目 必修 41単位",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "専門"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
+            ],
+            "minimum": 41,
+            "requiredSubjects": [
+                "機械の力学２",
+                "機械の力学１",
+                "材料力学１",
+                "機械要素設計１",
+                "機械機能工学入門",
+                "流れの力学１",
+                "熱力学１",
+                "機械機能工学実験１",
+                "機械機能工学実験２",
+                "メカトロニクス",
+                "機械機能工学基礎",
+                "機械要素設計２",
+                "機械要素設計３",
+                "Engineering Science ＆ Mechanics",
+                "創成ゼミナール１",
+                "創成ゼミナール２",
+                "卒業研究１",
+                "卒業研究２"
+            ]
+        },
+        {
+            "type": "minimumCredit",
+            "description": "専門科目 選択必修 26単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "専門"
+                    ],
+                    "divisions": [
+                        "選択必修"
+                    ]
+                }
+            ],
+            "minimum": 26
+        },
+        {
+            "type": "minimumCredit",
+            "description": "専門科目 67単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "専門"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 67
+        },
+        {
+            "type": "minimumCredit",
+            "description": "数理基礎 必修21単位",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "数理基礎"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
+            ],
+            "minimum": 21,
+            "requiredSubjects": [
+                "線形代数第１",
+                "線形代数第２",
+                "微分積分第１",
+                "微分積分第２",
+                "確率と統計第１",
+                "物理学実験",
+                "基礎電磁気学",
+                "基礎化学Ｃ"
+            ]
+        },
+        {
+            "type": "minimumCredit",
+            "description": "フーリエ解析・ラプラス変換・微分方程式・ベクトル解析 4単位以上",
+            "targets": [
+                {
+                    "type": "subject",
+                    "subjects": [
+                        "フーリエ解析",
+                        "ラプラス変換",
+                        "微分方程式",
+                        "ベクトル解析"
+                    ]
+                }
+            ],
+            "minimum": 4
+        },
+        {
+            "type": "minimumCredit",
+            "description": "言語 必修4単位",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "言語"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
+            ],
+            "minimum": 4,
+            "requiredSubjects": [
+                "Ｒｅａｄｉｎｇ＆ＷｒｉｔｉｎｇI",
+                "Ｌｉｓｔｅｎｉｎｇ＆ＳｐｅａｋｉｎｇI"
+            ]
+        },
+        {
+            "type": "minimumCredit",
+            "description": "Listening & Speaking II・Reading & Writing II・工学英語I・工学英語II 4単位以上",
+            "targets": [
+                {
+                    "type": "subject",
+                    "subjects": [
+                        "Ｌｉｓｔｅｎｉｎｇ＆ＳｐｅａｋｉｎｇII",
+                        "Ｒｅａｄｉｎｇ＆ＷｒｉｔｉｎｇII",
+                        "工学英語 I",
+                        "工学英語 II"
+                    ]
+                }
+            ],
+            "minimum": 4
+        },
+        {
+            "type": "minimumCredit",
+            "description": "言語 10単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "言語"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 10
+        },
+        {
+            "type": "minimumCredit",
+            "description": "情報 必修3単位",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "情報"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
+            ],
+            "minimum": 3,
+            "requiredSubjects": [
+                "Ｃ言語入門"
+            ]
+        },
+        {
+            "type": "minimumCredit",
+            "description": "情報 4単位",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "情報"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 4
+        },
+        {
+            "type": "minimumCredit",
+            "description": "人文社会系教養 必修2単位",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "人文社会系教養"
+                    ],
+                    "divisions": [
+                        "必修"
+                    ]
+                }
+            ],
+            "minimum": 2,
+            "requiredSubjects": [
+                "技術者の倫理"
+            ]
+        },
+        {
+            "type": "minimumCredit",
+            "description": "人文社会系教養 6単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "人文社会系教養"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 6
+        },
+        {
+            "type": "minimumCredit",
+            "description": "体育健康 2単位以上",
+            "targets": [
+                {
+                    "type": "group",
+                    "groups": [
+                        "体育健康"
+                    ],
+                    "divisions": [
+                        "必修",
+                        "選択必修",
+                        "選択"
+                    ]
+                }
+            ],
+            "minimum": 2
+        },
+        {
+            "type": "minimumGPA",
+            "description": "GPA 2.0以上",
+            "minimum": 2
+        }
+    ]
+}

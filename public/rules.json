@@ -4,15 +4,11 @@
             "name": "2021",
             "departments": [
                 {
-                    "name": "工学部 情報工学科",
+                    "name": "工学部 機械機能工学科",
                     "ruleFiles": [
                         {
                             "name": "卒業要件",
-                            "file": "al21_graduation.json"
-                        },
-                        {
-                            "name": "卒業研究着手条件",
-                            "file": "al21_research_start.json"
+                            "file": "ab21_graduation.json"
                         }
                     ]
                 },
@@ -26,6 +22,19 @@
                         {
                             "name": "卒業研究着手条件",
                             "file": "af21_research_start.json"
+                        }
+                    ]
+                },
+                {
+                    "name": "工学部 情報工学科",
+                    "ruleFiles": [
+                        {
+                            "name": "卒業要件",
+                            "file": "al21_graduation.json"
+                        },
+                        {
+                            "name": "卒業研究着手条件",
+                            "file": "al21_research_start.json"
                         }
                     ]
                 },
