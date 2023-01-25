@@ -6,6 +6,8 @@ import { FilterMaximumCredit } from './Filter/FilterMaximumCredit';
 import ResultMark from './ResultMark';
 import MinimumCreditRule, { CalcMinimumCreditRule } from './Rule/MinimumCreditRule';
 import MinimumGPARule, { CalcMinimumGPARule } from './Rule/MinimumGPARule';
+import Form from "react-bootstrap/Form";
+import { Result } from '../../types/Result';
 
 type ListRuleProps = {
     credits: Credits;
@@ -13,6 +15,15 @@ type ListRuleProps = {
 }
 
 const ListRule = ({ credits, rules }: ListRuleProps) => {
+    const [isSchedule, setIsSchedule] = useState<boolean>(false);
+
+    const passGrade = (): string[] => {
+        if (isSchedule) {
+            return rules.creditInfo.passGrade.concat(rules.creditInfo.unknownGrade);
+        }
+        return rules.creditInfo.passGrade;
+    }
+
     const filter = (): Credit[] => {
         let validCredits = credits.credits;
         rules.filters?.forEach((filter) => {
@@ -23,24 +34,30 @@ const ListRule = ({ credits, rules }: ListRuleProps) => {
         return validCredits;
     }
 
-    const filteredCredit = filter();
+    const results = (): Result[] => {
+        return rules.rules
+            .map((rule) => {
+                if (rule.type == "minimumCredit") {
+                    const [result] = CalcMinimumCreditRule(rule, filter(), passGrade());
+                    return result;
+                } else if (rule.type == "minimumGPA") {
+                    const [result] = CalcMinimumGPARule(rule, filter(), rules.creditInfo.gradePoint, isSchedule);
+                    return result;
+                }
+                return "unknown";
+            });
+    }
 
-    const results = rules.rules
-        .map((rule) => {
-            if (rule.type == "minimumCredit") {
-                const [result] = CalcMinimumCreditRule(rule, filteredCredit, rules.creditInfo.passGrade);
-                return result;
-            } else if (rule.type == "minimumGPA") {
-                const [result] = CalcMinimumGPARule(rule, filteredCredit, rules.creditInfo.gradePoint);
-                return result;
-            }
-        });
-    const result = results.every((result) => result == "pass") ? "pass" :
-        results.some((result) => result == "fail") ? "fail" : "unknown";
+    const result = (): Result => {
+        const results_cache = results();
+        return results_cache.every((result) => result == "pass") ? "pass" :
+            results_cache.some((result) => result == "fail") ? "fail" : "unknown";
+    }
 
     return (
         <>
-            <h3>判定結果: <ResultMark result={result} /></h3>
+            <h3>判定結果: <ResultMark result={result()} /></h3>
+            <Form.Check className="m-1" type="switch" label="取得予定単位を含める" onClick={(e) => setIsSchedule(!isSchedule)} />
             <Table striped bordered>
                 <thead>
                     <tr>
@@ -55,9 +72,9 @@ const ListRule = ({ credits, rules }: ListRuleProps) => {
                     {
                         rules.rules.map((rule, index) => {
                             if (rule.type == "minimumCredit") {
-                                return <MinimumCreditRule key={index} rule={rule} credits={filteredCredit} passGrade={rules.creditInfo.passGrade} />
+                                return <MinimumCreditRule key={index} rule={rule} credits={filter()} passGrade={passGrade()} />
                             } else if (rule.type = "minimumGPA") {
-                                return <MinimumGPARule key={index} rule={rule} credits={filteredCredit} gradePoint={rules.creditInfo.gradePoint} />
+                                return <MinimumGPARule key={index} rule={rule} credits={filter()} gradePoint={rules.creditInfo.gradePoint} isSchedule={isSchedule} />
                             }
                         })
                     }
