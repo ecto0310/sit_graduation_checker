@@ -15,7 +15,7 @@ const Header = () => {
                                 <Nav.Link href="/usage">使い方</Nav.Link>
                             </Nav>
                             <Nav>
-                                <Nav.Link href="https://github.com/ecto0310/sit_graduation_checker">Github</Nav.Link>
+                                <Nav.Link href="https://github.com/ecto0310/sit_graduation_checker">GitHub</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
