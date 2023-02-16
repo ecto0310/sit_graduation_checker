@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         S*gsot Credits Exporter for SIT Graduation Checker
-// @namespace    https://sit-graduation-checker.ecto0310.jp/
-// @version      0.2
+// @namespace    https://sit-graduation-checker.ecto0310.com/
+// @version      0.3
 // @description  Export the credit information used by the SIT Graduation Checker.
 // @author       ecto0310
 // @match        https://sgsot4a.sic.shibaura-it.ac.jp/Sgsot/ng/study.html?uid=*&type=study,gpa
