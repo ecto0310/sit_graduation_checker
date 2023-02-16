@@ -26,6 +26,22 @@ const ListRule = ({ credits, rules }: ListRuleProps) => {
 
     const filter = (): Credit[] => {
         let validCredits = credits.credits;
+        let sortKey = rules.creditInfo.passGrade.concat(rules.creditInfo.failGrade).concat(rules.creditInfo.unknownGrade);
+        validCredits.sort((l, r) => {
+            if (l.name == r.name) {
+                return sortKey.indexOf(l.grade) - sortKey.indexOf(r.grade);
+            }
+            if (l.name < r.name) {
+                return -1;
+            }
+            return 1;
+        });
+        validCredits = validCredits.filter((validCredit, i) => {
+            if(i==0){
+                return false;
+            }
+            return validCredit.name != validCredits[i-1].name;
+        });
         rules.filters?.forEach((filter) => {
             if (filter.type == "maximumCredit") {
                 validCredits = FilterMaximumCredit(validCredits, filter)
