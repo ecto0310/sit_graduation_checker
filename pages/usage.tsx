@@ -24,7 +24,7 @@ const UsagePage = () => {
                     </li>
                     <InputGroup className="mb-3">
                         <Form.Control placeholder="学籍番号" onChange={(e) => setStudentNumber(e.target.value)} />
-                        <Link href={"https://sgsot4a.sic.shibaura-it.ac.jp/Sgsot/html/Study.html.var?uid=" + studentNumber} target="_blank" rel="noopener noreferrer">
+                        <Link href={"https://sgsot4a.sic.shibaura-it.ac.jp/Sgsot/ng/study.html?uid=" + studentNumber + "&type=study,gpa"} target="_blank" rel="noopener noreferrer">
                             <Button variant="primary">移動</Button>
                         </Link>
                     </InputGroup>
