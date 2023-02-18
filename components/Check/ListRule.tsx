@@ -38,7 +38,7 @@ const ListRule = ({ credits, rules }: ListRuleProps) => {
         });
         validCredits = validCredits.filter((validCredit, i) => {
             if(i==0){
-                return false;
+                return true;
             }
             return validCredit.name != validCredits[i-1].name;
         });

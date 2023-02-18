@@ -24,16 +24,16 @@ export const CalcMinimumCreditRule = (rule: MinimumCreditRule, credits: Credit[]
 
     const result = rule.minimum <= sumCredit ? "pass" : "fail";
 
-    return [result, sumCredit, passCredits];
+    return [result, sumCredit, targetCredits];
 }
 
 const MinimumCreditRule = ({ rule, credits, passGrade }: MinimumCreditRuleProps) => {
-    const [result, sumCredit, passCredits] = CalcMinimumCreditRule(rule, credits, passGrade);
+    const [result, sumCredit, targetCredits] = CalcMinimumCreditRule(rule, credits, passGrade);
     const nonPassrequiredSubjects = rule.requiredSubjects?.
         filter((requiredSubject) =>
-            !passCredits.some((passCredit) => passCredit.name === requiredSubject)
+            !targetCredits.some((passCredit) => passCredit.name === requiredSubject)
         )
-
+    console.log(rule.description,sumCredit,targetCredits);
     return (
         <>
             <tr>
