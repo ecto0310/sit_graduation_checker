@@ -33,7 +33,7 @@ const MinimumCreditRule = ({ rule, credits, passGrade }: MinimumCreditRuleProps)
         filter((requiredSubject) =>
             !targetCredits.some((passCredit) => passCredit.name === requiredSubject)
         )
-    console.log(rule.description,sumCredit,targetCredits);
+
     return (
         <>
             <tr>
