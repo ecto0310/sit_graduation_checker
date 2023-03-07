@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         S*gsot Credits Exporter for SIT Graduation Checker
 // @namespace    https://sit-graduation-checker.ecto0310.com/
-// @version      0.3
+// @version      0.4.0
 // @description  Export the credit information used by the SIT Graduation Checker.
 // @author       ecto0310
 // @match        https://sgsot4a.sic.shibaura-it.ac.jp/Sgsot/ng/study.html?uid=*&type=study,gpa
@@ -35,6 +35,7 @@
                     const creditNodes = [...xmlData.querySelectorAll("Studies Study")];
                     return creditNodes.map((creditNode) => {
                         const credit = creditNode.attributes;
+                        const week = Math.min(parseInt(credit.JikanwariCD.value[0]) - 1, 6);
                         console.log(credit);
                         return {
                             "group": credit.KeiretuKubun.value,
@@ -43,7 +44,9 @@
                             "count": parseInt(credit.Tanisuu.value),
                             "grade": credit.Hyouka.value,
                             "form": credit.NaiyouKubun.value,
-                            "period": credit.Nendo.value + "年度 " + credit.Ki.value
+                            "semester": credit.Nendo.value + "年度" + credit.Ki.value,
+                            "day": ["月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日", "その他"][week],
+                            "time": (week == 6 ? "" : parseInt(credit.JikanwariCD.value[1]) + "限"),
                         };
                     });
                 }).then(credits => {
