@@ -16,6 +16,7 @@ export type CreditInfo = {
     passGrade: string[];
     failGrade: string[];
     unknownGrade: string[];
+    startYear: number;
 }
 
 export type GradePoint = {

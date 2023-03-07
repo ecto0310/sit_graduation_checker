@@ -44,6 +44,9 @@ const CheckPage = () => {
                     <Nav.Item >
                         <Nav.Link disabled={credits === undefined} active={mode === "credit"} onClick={(e) => setMode("credit")} >単位状況</Nav.Link>
                     </Nav.Item>
+                    <Nav.Item >
+                        <Nav.Link disabled={credits === undefined} active={mode === "timetable"} onClick={(e) => setMode("timetable")} >時間割</Nav.Link>
+                    </Nav.Item>
                 </Nav>
                 <MainTab mode={mode} credits={credits} setCredits={saveCredits} rules={rules} />
             </div>

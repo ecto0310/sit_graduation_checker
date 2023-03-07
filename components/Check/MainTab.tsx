@@ -5,6 +5,7 @@ import ListCredit from "../../components/Check/ListCredit";
 import ListRule from "../../components/Check/ListRule";
 import { Credits } from "../../types/Credits";
 import { Rules } from "../../types/Rules/Rules";
+import TimeTable from "./TimeTable";
 
 type MainTabProps = {
     mode: string;
@@ -27,6 +28,15 @@ const MainTab = ({ mode, credits, setCredits, rules }: MainTabProps) => {
         case "credit":
             if (credits) {
                 return <ListCredit credits={credits || { credits: [] }} setCredits={setCredits} creditInfo={rules?.creditInfo!} />;
+            }
+            return (
+                <Alert variant={"primary"} className="mt-1">
+                    単位情報が存在しません
+                </Alert>
+            );
+        case "timetable":
+            if (credits) {
+                return <TimeTable credits={credits || { credits: [] }} setCredits={setCredits} creditInfo={rules?.creditInfo!} />;
             }
             return (
                 <Alert variant={"primary"} className="mt-1">

@@ -37,10 +37,10 @@ const ListRule = ({ credits, rules }: ListRuleProps) => {
             return 1;
         });
         validCredits = validCredits.filter((validCredit, i) => {
-            if(i==0){
+            if (i == 0) {
                 return true;
             }
-            return validCredit.name != validCredits[i-1].name;
+            return validCredit.name != validCredits[i - 1].name;
         });
         rules.filters?.forEach((filter) => {
             if (filter.type == "maximumCredit") {
