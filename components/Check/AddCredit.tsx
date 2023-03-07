@@ -18,8 +18,7 @@ const AddCredit = ({ addCredit, creditInfo }: AddCreditProps) => {
     const [division, setDivision] = useState<string>(creditInfo.divisions[0]);
     const [count, setCount] = useState<number>(2);
     const [grade, setGrade] = useState<string>(grades[0]);
-    const [period, setPeriod] = useState<string>("未定");
-
+    const [semester, setSemester] = useState<string>("未定");
 
     return (
         <>
@@ -46,9 +45,11 @@ const AddCredit = ({ addCredit, creditInfo }: AddCreditProps) => {
                     </Form.Select>
                 </td>
                 <td>
-                    <Form.Control value={period} onChange={(e) => setPeriod(e.target.value)} />
+                    <Form.Control value={semester} onChange={(e) => setSemester(e.target.value)} />
                 </td>
-                <td><Button variant="primary" onClick={() => addCredit({ group: group, name: name, division: division, count: count, grade: grade, period: period })}><FontAwesomeIcon icon={faPlusSquare} /></Button></td>
+                <td>
+                </td>
+                <td><Button variant="primary" onClick={() => addCredit({ group: group, name: name, division: division, count: count, grade: grade, semester: semester, day: "その他", time: "" })}><FontAwesomeIcon icon={faPlusSquare} /></Button></td>
             </tr>
         </>
     )

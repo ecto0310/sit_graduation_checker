@@ -8,5 +8,7 @@ export type Credit = {
     division: string;
     count: number;
     grade: string;
-    period: string;
+    semester: string;
+    day: string;
+    time: string;
 }

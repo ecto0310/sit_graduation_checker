@@ -26,6 +26,7 @@ const ListCredit = ({ credits, setCredits, creditInfo }: ListCreditProps) => {
                         <th>単位数</th>
                         <th>評価</th>
                         <th>期</th>
+                        <th>時間</th>
                         <th>編集</th>
                     </tr>
                 </thead>
@@ -44,7 +45,8 @@ const ListCredit = ({ credits, setCredits, creditInfo }: ListCreditProps) => {
                                             {grades.map((data, index) => <option key={index} value={data}>{data}</option>)}
                                         </Form.Select>
                                     </td>
-                                    <td>{credit.period}</td>
+                                    <td>{credit.semester}</td>
+                                    <td>{credit.day} {credit.time}</td>
                                     <td><Button variant="danger" onClick={() => { credits.credits.splice(index, 1); setCredits({ ...credits, credits: credits.credits }) }}><FontAwesomeIcon icon={faTrashAlt} /></Button></td>
                                 </tr>
                             )
