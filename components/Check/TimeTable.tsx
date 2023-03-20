@@ -49,8 +49,7 @@ const TimeTable = ({ credits, setCredits, creditInfo }: TimeTableProps) => {
                         <th>科目名</th>
                         <th>単位数</th>
                         <th>評価</th>
-                        <th>削除</th>
-                        <th>変更</th>
+                        <th>編集</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,7 +62,10 @@ const TimeTable = ({ credits, setCredits, creditInfo }: TimeTableProps) => {
                                     <td>{time}</td>
                                     {creditIndex == undefined ?
                                         <>
-                                            <td colSpan={6}></td>
+                                            <td colSpan={5}></td>
+                                            <td>
+                                                <Button variant="primary" onClick={() => { setTime(time); setModalShow(true); }}><FontAwesomeIcon icon={faPlusSquare} /></Button>
+                                            </td>
                                         </> :
                                         <>
                                             <td>{credit.group}</td>
@@ -76,9 +78,6 @@ const TimeTable = ({ credits, setCredits, creditInfo }: TimeTableProps) => {
                                             </td>
                                         </>
                                     }
-                                    <td>
-                                        {classes != undefined && <Button variant="primary" onClick={() => { setTime(time); setModalShow(true); }}><FontAwesomeIcon icon={faPlusSquare} /></Button>}
-                                    </td>
                                 </tr>
                             );
                         })
