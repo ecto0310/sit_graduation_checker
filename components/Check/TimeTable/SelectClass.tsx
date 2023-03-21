@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useEffect } from 'react';
-import { Classes } from '../../../types/TimeTables';
+import { Classes } from '../../../interfaces/TimeTables';
 
 type SelectClassProps = {
     classes?: Classes;

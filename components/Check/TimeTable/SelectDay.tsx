@@ -1,4 +1,5 @@
 import { Form, Nav } from 'react-bootstrap';
+import { days } from '../../../interfaces/TimeTables';
 
 type SelectDayProps = {
     selected_day: string;
@@ -6,8 +7,6 @@ type SelectDayProps = {
 }
 
 const SelectDay = ({ selected_day, setDay }: SelectDayProps) => {
-    const days = ["月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
-
     return (
         <>
             <Nav fill variant="tabs" className="mb-2">

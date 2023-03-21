@@ -5,8 +5,8 @@ import ListCredit from "../components/Check/ListCredit";
 import ListRule from "../components/Check/ListRule";
 import MainTab from "../components/Check/MainTab";
 import SelectCredit from "../components/Check/SelectCredit";
-import { Credits } from "../types/Credits";
-import { Rules } from "../types/Rules/Rules";
+import { Credits } from "../interfaces/Credits";
+import { Rules } from "../interfaces/Rules/Rules";
 
 const CheckPage = () => {
     const router = useRouter();

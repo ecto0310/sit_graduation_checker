@@ -1,5 +1,5 @@
 import { Modal } from 'react-bootstrap';
-import { Classes } from '../../../types/TimeTables';
+import { Classes } from '../../../interfaces/TimeTables';
 
 type ModalClassProps = {
     modalShow: boolean;
@@ -7,7 +7,7 @@ type ModalClassProps = {
     classes: Classes;
 }
 
-const ModalClass = ({ modalShow, setModalShow, classes }: ModalClassProps) => {
+const ModalSelectClass = ({ modalShow, setModalShow, classes }: ModalClassProps) => {
 
     return (
         <>
@@ -24,4 +24,4 @@ const ModalClass = ({ modalShow, setModalShow, classes }: ModalClassProps) => {
     )
 }
 
-export default ModalClass;
+export default ModalSelectClass;

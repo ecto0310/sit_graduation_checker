@@ -1,6 +1,6 @@
 import { faCircleCheck, faCircleQuestion, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Result } from "../../types/Result";
+import { Result } from "../../interfaces/Result";
 
 type ResultMarkProps = {
     result: Result;

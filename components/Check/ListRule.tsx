@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import Table from 'react-bootstrap/Table';
-import { Credit, Credits } from '../../types/Credits';
-import { Rules } from '../../types/Rules/Rules';
+import { Credit, Credits } from '../../interfaces/Credits';
+import { Rules } from '../../interfaces/Rules/Rules';
 import { FilterMaximumCredit } from './Filter/FilterMaximumCredit';
 import ResultMark from './ResultMark';
 import MinimumCreditRule, { CalcMinimumCreditRule } from './Rule/MinimumCreditRule';
 import MinimumGPARule, { CalcMinimumGPARule } from './Rule/MinimumGPARule';
 import Form from "react-bootstrap/Form";
-import { Result } from '../../types/Result';
+import { Result } from '../../interfaces/Result';
 
 type ListRuleProps = {
     credits: Credits;

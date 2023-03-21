@@ -1,6 +1,6 @@
-import { Credit } from '../../../types/Credits';
-import { Result } from '../../../types/Result';
-import { MinimumCreditRule } from '../../../types/Rules/MinimumCreditRule';
+import { Credit } from '../../../interfaces/Credits';
+import { Result } from '../../../interfaces/Result';
+import { MinimumCreditRule } from '../../../interfaces/Rules/MinimumCreditRule';
 import ResultMark from '../ResultMark';
 
 type MinimumCreditRuleProps = {

@@ -2,8 +2,8 @@ import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Credit } from '../../types/Credits';
-import { CreditInfo } from '../../types/Rules/Rules';
+import { Credit } from '../../interfaces/Credits';
+import { CreditInfo } from '../../interfaces/Rules/Rules';
 
 type AddCreditProps = {
     addCredit: (credit: Credit) => void;
