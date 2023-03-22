@@ -1,4 +1,4 @@
-import { Credits } from '../../../interfaces/Credits';
+import { Credit, Credits } from '../../../interfaces/Credits';
 import { CreditInfo } from '../../../interfaces/Rules/Rules';
 import Table from 'react-bootstrap/Table';
 import { Button } from 'react-bootstrap';
@@ -17,15 +17,15 @@ type TableProps = {
 }
 
 const TimeTableTable = ({ semester, day, credits, setCredits, creditInfo, setTime, setModalShow }: TableProps) => {
-    const getCreditIndex = (semester: string, day: string, time: string): number | undefined => {
-        const credit = credits.credits.filter((credits) => credits.semester == semester && credits.day == day && credits.time == time);
-        if (credit.length == 0) {
-            return undefined;
-        }
-
-        return credits.credits.indexOf(credit[0]);
+    const getCreditIndexs = (semester: string, day: string, time: string): number[] => {
+        let indexs: number[] = [];
+        credits.credits.forEach((credit, index) => {
+            if (credit.semester == semester && credit.day == day && credit.time == time) {
+                indexs.push(index)
+            }
+        });
+        return indexs;
     }
-
 
     return (
         <>
@@ -44,31 +44,44 @@ const TimeTableTable = ({ semester, day, credits, setCredits, creditInfo, setTim
                 <tbody>
                     {
                         times.map((time) => {
-                            const creditIndex = getCreditIndex(semester, day, time);
-                            const credit = credits.credits[creditIndex ?? 0];
-                            return (
-                                <tr>
-                                    <td>{time}</td>
-                                    {creditIndex == undefined ?
-                                        <>
-                                            <td colSpan={5}></td>
-                                            <td>
-                                                <Button variant="primary" onClick={() => { setTime(time); setModalShow(true); }}><FontAwesomeIcon icon={faPlusSquare} /></Button>
-                                            </td>
-                                        </> :
-                                        <>
-                                            <td>{credit.group}</td>
-                                            <td>{credit.division}</td>
-                                            <td>{credit.name}</td>
-                                            <td>{credit.count}</td>
-                                            <td>{credit.grade}</td>
-                                            <td>
-                                                <Button variant="danger" onClick={() => { credits.credits.splice(creditIndex, 1); setCredits({ ...credits, credits: credits.credits }) }}><FontAwesomeIcon icon={faTrashAlt} /></Button>
-                                            </td>
-                                        </>
-                                    }
-                                </tr>
-                            );
+                            const creditIndexs = getCreditIndexs(semester, day, time);
+                            const duplicate = 2 <= creditIndexs.length;
+                            if (creditIndexs.length == 0) {
+                                return (
+                                    <tr>
+                                        <td>{time}</td>
+                                        {
+                                            <>
+                                                <td colSpan={5}></td>
+                                                <td>
+                                                    <Button variant="primary" onClick={() => { setTime(time); setModalShow(true); }}><FontAwesomeIcon icon={faPlusSquare} /></Button>
+                                                </td>
+                                            </>
+                                        }
+                                    </tr>
+                                )
+
+                            }
+                            return creditIndexs.map((creditIndex) => {
+                                const credit = credits.credits[creditIndex];
+                                return (
+                                    <tr>
+                                        <td className={duplicate ? 'bg-danger' : ''}>{time}</td>
+                                        {
+                                            <>
+                                                <td>{credit.group}</td>
+                                                <td>{credit.division}</td>
+                                                <td>{credit.name}</td>
+                                                <td>{credit.count}</td>
+                                                <td>{credit.grade}</td>
+                                                <td>
+                                                    <Button variant="danger" onClick={() => { credits.credits.splice(creditIndex, 1); setCredits({ ...credits, credits: credits.credits }) }}><FontAwesomeIcon icon={faTrashAlt} /></Button>
+                                                </td>
+                                            </>
+                                        }
+                                    </tr>
+                                )
+                            });
                         })
                     }
                 </tbody>

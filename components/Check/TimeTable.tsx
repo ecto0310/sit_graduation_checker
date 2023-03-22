@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Credits } from '../../interfaces/Credits';
+import { Credit, Credits } from '../../interfaces/Credits';
 import { CreditInfo } from '../../interfaces/Rules/Rules';
 import { Classes, days, times } from '../../interfaces/TimeTables';
 import ModalSelectClass from './TimeTable/ModalSelectClass';
+import OtherTimeTableTable from './TimeTable/OtherTimeTableTable';
 import SelectClass from './TimeTable/SelectClass';
 import SelectDay from './TimeTable/SelectDay';
 import SelectSemester from './TimeTable/SelectSemester';
@@ -26,7 +27,11 @@ const TimeTable = ({ credits, setCredits, creditInfo }: TimeTableProps) => {
             <SelectSemester selected_semester={semester} setSemester={setSemester} startYear={creditInfo.startYear} />
             <SelectClass classes={classes} setClasses={setClasses} />
             <SelectDay selected_day={day} setDay={setDay} />
-            <TimeTableTable semester={semester} day={day} credits={credits} setCredits={setCredits} creditInfo={creditInfo} setTime={setTime} setModalShow={setModalShow} />
+            {
+                day == days[6] ?
+                    <OtherTimeTableTable semester={semester} credits={credits} setCredits={setCredits} creditInfo={creditInfo} setTime={setTime} setModalShow={setModalShow} /> :
+                    <TimeTableTable semester={semester} day={day} credits={credits} setCredits={setCredits} creditInfo={creditInfo} setTime={setTime} setModalShow={setModalShow} />
+            }
             <ModalSelectClass modalShow={modalShow} setModalShow={setModalShow} classes={classes ?? { classes: [] }} />
         </>
     )
