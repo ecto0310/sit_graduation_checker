@@ -17,7 +17,7 @@ const AddCredit = ({ addCredit, creditInfo }: AddCreditProps) => {
     const [name, setName] = useState<string>("");
     const [division, setDivision] = useState<string>(creditInfo.divisions[0]);
     const [count, setCount] = useState<number>(2);
-    const [grade, setGrade] = useState<string>(grades[0]);
+    const [grade, setGrade] = useState<string>(creditInfo.unknownGrade[0]);
     const [semester, setSemester] = useState<string>("");
 
     return (
