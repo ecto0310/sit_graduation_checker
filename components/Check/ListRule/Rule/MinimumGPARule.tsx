@@ -1,8 +1,8 @@
-import { Credit } from '../../../interfaces/Credits';
-import { GradePoint } from '../../../interfaces/Rules/Rules';
-import { MinimumGPARule } from '../../../interfaces/Rules/MinimumGPARule';
+import { Credit } from '../../../../interfaces/Credits';
+import { GradePoint } from '../../../../interfaces/Rules/Rules';
+import { MinimumGPARule } from '../../../../interfaces/Rules/MinimumGPARule';
 import ResultMark from '../ResultMark';
-import { Result } from '../../../interfaces/Result';
+import { Result } from '../../../../interfaces/Result';
 
 type MinimumGPARuleProps = {
     rule: MinimumGPARule;

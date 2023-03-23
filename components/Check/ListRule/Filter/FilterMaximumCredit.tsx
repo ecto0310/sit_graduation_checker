@@ -1,5 +1,5 @@
-import { Credit } from "../../../interfaces/Credits";
-import { MaximumCreditFilter } from "../../../interfaces/Rules/MaximumCreditFilter";
+import { Credit } from "../../../../interfaces/Credits";
+import { MaximumCreditFilter } from "../../../../interfaces/Rules/MaximumCreditFilter";
 
 export const FilterMaximumCredit = (credits: Credit[], filter: MaximumCreditFilter): Credit[] => {
     const targets = credits.filter((credit) =>

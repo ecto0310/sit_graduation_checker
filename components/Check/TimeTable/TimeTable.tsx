@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { Credit, Credits } from '../../interfaces/Credits';
-import { CreditInfo } from '../../interfaces/Rules/Rules';
-import { Classes, days, times } from '../../interfaces/TimeTables';
-import ModalSelectClass from './TimeTable/ModalSelectClass';
-import OtherTimeTableTable from './TimeTable/OtherTimeTableTable';
-import SelectClass from './TimeTable/SelectClass';
-import SelectDay from './TimeTable/SelectDay';
-import SelectSemester from './TimeTable/SelectSemester';
-import TimeTableTable from './TimeTable/TimeTableTable';
+import { Credit, Credits } from '../../../interfaces/Credits';
+import { CreditInfo } from '../../../interfaces/Rules/Rules';
+import { Classes, days, times } from '../../../interfaces/TimeTables';
+import ModalSelectClass from './ModalSelectClass';
+import OtherTimeTableTable from './OtherTimeTableTable';
+import SelectClass from './SelectClass';
+import SelectDay from './SelectDay';
+import SelectSemester from './SelectSemester';
+import TimeTableTable from './TimeTableTable';
 
 type TimeTableProps = {
     credits: Credits;

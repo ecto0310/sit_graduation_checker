@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Alert, Nav } from 'react-bootstrap'
-import ListCredit from "../components/Check/ListCredit";
-import ListRule from "../components/Check/ListRule";
+import ListCredit from "../components/Check/ListCredit/ListCredit";
+import ListRule from "../components/Check/ListRule/ListRule";
 import MainTab from "../components/Check/MainTab";
 import SelectCredit from "../components/Check/SelectCredit";
 import { Credits } from "../interfaces/Credits";

@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Alert, Nav } from 'react-bootstrap'
-import ListCredit from "../../components/Check/ListCredit";
-import ListRule from "../../components/Check/ListRule";
+import ListCredit from "./ListCredit/ListCredit";
+import ListRule from "../../components/Check/ListRule/ListRule";
 import { Credits } from "../../interfaces/Credits";
 import { Rules } from "../../interfaces/Rules/Rules";
-import TimeTable from "./TimeTable";
+import TimeTable from "./TimeTable/TimeTable";
 
 type MainTabProps = {
     mode: string;

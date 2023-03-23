@@ -2,8 +2,8 @@ import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Form } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
-import { Credit, Credits } from '../../interfaces/Credits';
-import { CreditInfo } from '../../interfaces/Rules/Rules';
+import { Credit, Credits } from '../../../interfaces/Credits';
+import { CreditInfo } from '../../../interfaces/Rules/Rules';
 import AddCredit from './AddCredit';
 
 type ListCreditProps = {
