@@ -43,22 +43,18 @@ const TimeTableTable = ({ semester, credits, setCredits, creditInfo, setTime, se
                 </thead>
                 <tbody>
                     {
-                        creditIndexs.map((creditIndex) => {
+                        creditIndexs.map((creditIndex, index) => {
                             const credit = credits.credits[creditIndex];
                             return (
-                                <tr>
-                                    {
-                                        <>
-                                            <td>{credit.group}</　td>
-                                            <td>{credit.division}</td>
-                                            <td>{credit.name}</td>
-                                            <td>{credit.count}</td>
-                                            <td>{credit.grade}</td>
-                                            <td>
-                                                <Button variant="danger" onClick={() => { credits.credits[creditIndex] = { ...credits.credits[creditIndex], semester: "", day: "", time: "" }; setCredits({ ...credits, credits: credits.credits }) }}><FontAwesomeIcon icon={faTrashAlt} /></Button>
-                                            </td>
-                                        </>
-                                    }
+                                <tr key={index}>
+                                    <td>{credit.group}</td>
+                                    <td>{credit.division}</td>
+                                    <td>{credit.name}</td>
+                                    <td>{credit.count}</td>
+                                    <td>{credit.grade}</td>
+                                    <td>
+                                        <Button variant="danger" onClick={() => { credits.credits[creditIndex] = { ...credits.credits[creditIndex], semester: "", day: "", time: "" }; setCredits({ ...credits, credits: credits.credits }) }}><FontAwesomeIcon icon={faTrashAlt} /></Button>
+                                    </td>
                                 </tr>
                             )
                         })

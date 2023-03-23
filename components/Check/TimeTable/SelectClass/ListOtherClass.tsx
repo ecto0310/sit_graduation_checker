@@ -48,22 +48,18 @@ const TimeTableTable = ({ semester, day, time, credits, setCredits, creditInfo, 
                 </thead>
                 <tbody>
                     {
-                        creditIndexs.map((creditIndex) => {
+                        creditIndexs.map((creditIndex, index) => {
                             const credit = credits.credits[creditIndex];
                             return (
-                                <tr>
-                                    {
-                                        <>
-                                            <td>{credit.group}</td>
-                                            <td>{credit.division}</td>
-                                            <td>{credit.name}</td>
-                                            <td>{credit.count}</td>
-                                            <td>{credit.grade}</td>
-                                            <td>
-                                                <Button variant="primary" onClick={() => { credits.credits[creditIndex] = { ...credits.credits[creditIndex], semester: semester, day: day, time: time }; setCredits({ ...credits, credits: credits.credits }); setModalShow(false); }}><FontAwesomeIcon icon={faPlusSquare} /></Button>
-                                            </td>
-                                        </>
-                                    }
+                                <tr key={index}>
+                                    <td>{credit.group}</td>
+                                    <td>{credit.division}</td>
+                                    <td>{credit.name}</td>
+                                    <td>{credit.count}</td>
+                                    <td>{credit.grade}</td>
+                                    <td>
+                                        <Button variant="primary" onClick={() => { credits.credits[creditIndex] = { ...credits.credits[creditIndex], semester: semester, day: day, time: time }; setCredits({ ...credits, credits: credits.credits }); setModalShow(false); }}><FontAwesomeIcon icon={faPlusSquare} /></Button>
+                                    </td>
                                 </tr>
                             )
                         })

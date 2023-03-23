@@ -43,42 +43,34 @@ const TimeTableTable = ({ semester, day, credits, setCredits, creditInfo, setTim
                 </thead>
                 <tbody>
                     {
-                        times.map((time) => {
+                        times.map((time, index_time) => {
                             const creditIndexs = getCreditIndexs(semester, day, time);
                             const duplicate = 2 <= creditIndexs.length;
                             if (creditIndexs.length == 0) {
                                 return (
-                                    <tr>
+                                    <tr key={index_time}>
                                         <td>{time}</td>
-                                        {
-                                            <>
-                                                <td colSpan={5}></td>
-                                                <td>
-                                                    <Button variant="primary" onClick={() => { setTime(time); setModalShow(true); }}><FontAwesomeIcon icon={faPlusSquare} /></Button>
-                                                </td>
-                                            </>
-                                        }
+                                        <td colSpan={5}></td>
+                                        <td>
+                                            <Button variant="primary" onClick={() => { setTime(time); setModalShow(true); }}><FontAwesomeIcon icon={faPlusSquare} /></Button>
+                                        </td>
                                     </tr>
                                 )
 
                             }
-                            return creditIndexs.map((creditIndex) => {
+                            return creditIndexs.map((creditIndex, index_credit) => {
                                 const credit = credits.credits[creditIndex];
                                 return (
-                                    <tr>
+                                    <tr key={index_time + "-" + index_credit}>
                                         <td className={duplicate ? 'bg-danger' : ''}>{time}</td>
-                                        {
-                                            <>
-                                                <td>{credit.group}</td>
-                                                <td>{credit.division}</td>
-                                                <td>{credit.name}</td>
-                                                <td>{credit.count}</td>
-                                                <td>{credit.grade}</td>
-                                                <td>
-                                                    <Button variant="danger" onClick={() => { credits.credits[creditIndex] = { ...credits.credits[creditIndex], semester: "", day: "", time: "" }; setCredits({ ...credits, credits: credits.credits }) }}><FontAwesomeIcon icon={faTrashAlt} /></Button>
-                                                </td>
-                                            </>
-                                        }
+                                        <td>{credit.group}</td>
+                                        <td>{credit.division}</td>
+                                        <td>{credit.name}</td>
+                                        <td>{credit.count}</td>
+                                        <td>{credit.grade}</td>
+                                        <td>
+                                            <Button variant="danger" onClick={() => { credits.credits[creditIndex] = { ...credits.credits[creditIndex], semester: "", day: "", time: "" }; setCredits({ ...credits, credits: credits.credits }) }}><FontAwesomeIcon icon={faTrashAlt} /></Button>
+                                        </td>
                                     </tr>
                                 )
                             });

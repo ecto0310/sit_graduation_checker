@@ -11,8 +11,8 @@ const SelectDay = ({ selected_day, setDay }: SelectDayProps) => {
         <>
             <Nav fill variant="tabs" className="mb-2">
                 {
-                    days.map((day) =>
-                        <Nav.Item >
+                    days.map((day, index) =>
+                        <Nav.Item key={index}>
                             <Nav.Link active={day === selected_day} onClick={(e) => setDay(day)} >{day}</Nav.Link>
                         </Nav.Item>
                     )
