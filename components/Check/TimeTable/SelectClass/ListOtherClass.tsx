@@ -1,35 +1,40 @@
-import { Credits } from '../../../interfaces/Credits';
-import { CreditInfo } from '../../../interfaces/Rules/Rules';
+import { Credits } from '../../../../interfaces/Credits';
+import { CreditInfo } from '../../../../interfaces/Rules/Rules';
 import Table from 'react-bootstrap/Table';
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusSquare, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { days, times } from '../../../interfaces/TimeTables';
+import { days, times } from '../../../../interfaces/TimeTables';
+import { useState } from 'react';
 
 type TableProps = {
     semester: string;
+    day: string;
+    time: string;
     credits: Credits;
     setCredits: (credits: Credits) => void;
     creditInfo: CreditInfo;
-    setTime: (time: string) => void;
     setModalShow: (show: boolean) => void;
 }
 
-const TimeTableTable = ({ semester, credits, setCredits, creditInfo, setTime, setModalShow }: TableProps) => {
-    const getCreditIndexs = (semester: string): number[] => {
+const TimeTableTable = ({ semester, day, time, credits, setCredits, creditInfo, setModalShow }: TableProps) => {
+    const [isSchedule, setIsSchedule] = useState<boolean>(false);
+
+    const getCreditIndexs = (): number[] => {
         let indexs: number[] = [];
         credits.credits.forEach((credit, index) => {
-            if (credit.semester == semester && !days.includes(credit.day)) {
+            if ((credit.semester == "" || credit.semester == semester) && !days.includes(credit.day) && (!isSchedule || creditInfo.unknownGrade.includes(credit.grade))) {
                 indexs.push(index)
             }
         });
         return indexs;
     }
 
-    const creditIndexs = getCreditIndexs(semester);
+    const creditIndexs = getCreditIndexs();
 
     return (
         <>
+            <Form.Check className="m-1" type="switch" label="成績未確定単位のみ表示" onClick={(e) => setIsSchedule(!isSchedule)} />
             <Table striped bordered>
                 <thead>
                     <tr>
@@ -49,13 +54,13 @@ const TimeTableTable = ({ semester, credits, setCredits, creditInfo, setTime, se
                                 <tr>
                                     {
                                         <>
-                                            <td>{credit.group}</　td>
+                                            <td>{credit.group}</td>
                                             <td>{credit.division}</td>
                                             <td>{credit.name}</td>
                                             <td>{credit.count}</td>
                                             <td>{credit.grade}</td>
                                             <td>
-                                                <Button variant="danger" onClick={() => { credits.credits[creditIndex] = { ...credits.credits[creditIndex], semester: "", day: "", time: "" }; setCredits({ ...credits, credits: credits.credits }) }}><FontAwesomeIcon icon={faTrashAlt} /></Button>
+                                                <Button variant="primary" onClick={() => { credits.credits[creditIndex] = { ...credits.credits[creditIndex], semester: semester, day: day, time: time }; setCredits({ ...credits, credits: credits.credits }); setModalShow(false); }}><FontAwesomeIcon icon={faPlusSquare} /></Button>
                                             </td>
                                         </>
                                     }

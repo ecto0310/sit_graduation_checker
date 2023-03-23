@@ -18,7 +18,7 @@ type TimeTableProps = {
 const TimeTable = ({ credits, setCredits, creditInfo }: TimeTableProps) => {
     const [semester, setSemester] = useState<string>(creditInfo.startYear + "年度前期");
     const [day, setDay] = useState<string>(days[0]);
-    const [_, setTime] = useState<string>(times[0]);
+    const [time, setTime] = useState<string>(times[0]);
     const [classes, setClasses] = useState<Classes>();
     const [modalShow, setModalShow] = useState<boolean>(false);
 
@@ -28,11 +28,11 @@ const TimeTable = ({ credits, setCredits, creditInfo }: TimeTableProps) => {
             <SelectClass classes={classes} setClasses={setClasses} />
             <SelectDay selected_day={day} setDay={setDay} />
             {
-                day == days[6] ?
-                    <OtherTimeTableTable semester={semester} credits={credits} setCredits={setCredits} creditInfo={creditInfo} setTime={setTime} setModalShow={setModalShow} /> :
-                    <TimeTableTable semester={semester} day={day} credits={credits} setCredits={setCredits} creditInfo={creditInfo} setTime={setTime} setModalShow={setModalShow} />
+                days.includes(day) ?
+                    <TimeTableTable semester={semester} day={day} credits={credits} setCredits={setCredits} creditInfo={creditInfo} setTime={setTime} setModalShow={setModalShow} /> :
+                    <OtherTimeTableTable semester={semester} credits={credits} setCredits={setCredits} creditInfo={creditInfo} setTime={setTime} setModalShow={setModalShow} />
             }
-            <ModalSelectClass modalShow={modalShow} setModalShow={setModalShow} classes={classes ?? { classes: [] }} />
+            <ModalSelectClass modalShow={modalShow} setModalShow={setModalShow} classes={classes ?? { classes: [] }} semester={semester} day={day} time={time} credits={credits} setCredits={setCredits} creditInfo={creditInfo} />
         </>
     )
 }

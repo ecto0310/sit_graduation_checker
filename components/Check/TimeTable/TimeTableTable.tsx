@@ -75,7 +75,7 @@ const TimeTableTable = ({ semester, day, credits, setCredits, creditInfo, setTim
                                                 <td>{credit.count}</td>
                                                 <td>{credit.grade}</td>
                                                 <td>
-                                                    <Button variant="danger" onClick={() => { credits.credits.splice(creditIndex, 1); setCredits({ ...credits, credits: credits.credits }) }}><FontAwesomeIcon icon={faTrashAlt} /></Button>
+                                                    <Button variant="danger" onClick={() => { credits.credits[creditIndex] = { ...credits.credits[creditIndex], semester: "", day: "", time: "" }; setCredits({ ...credits, credits: credits.credits }) }}><FontAwesomeIcon icon={faTrashAlt} /></Button>
                                                 </td>
                                             </>
                                         }
