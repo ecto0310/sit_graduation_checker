@@ -2,9 +2,11 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Nav } from 'react-bootstrap'
 import MainTab from "../components/Check/MainTab";
+import SelectClass from "../components/Check/SelectClass";
 import SelectCredit from "../components/Check/SelectCredit";
 import { Credits, defaultCredits } from "../interfaces/Credits";
 import { defaultRules, Rules } from "../interfaces/Rules/Rules";
+import { Classes, defaultClasses } from "../interfaces/TimeTables";
 
 const CheckPage = () => {
     const router = useRouter();
@@ -12,6 +14,7 @@ const CheckPage = () => {
     const [credits, setCredits] = useState<Credits>(defaultCredits);
     const [rules, setRules] = useState<Rules>(defaultRules);
     const [mode, setMode] = useState<string>("check");
+    const [classes, setClasses] = useState<Classes>(defaultClasses);
 
     useEffect(() => {
         if (router.query.ruleFile !== undefined && rules === defaultRules) {
@@ -35,6 +38,9 @@ const CheckPage = () => {
                 <SelectCredit credits={credits} setCredits={saveCredits} />
             </div>
             <div>
+                <SelectClass classes={classes} setClasses={setClasses} />
+            </div>
+            <div>
                 <Nav fill variant="tabs" className="mb-2">
                     <Nav.Item >
                         <Nav.Link disabled={rules === undefined} active={mode === "check"} onClick={(e) => setMode("check")} >要件チェック</Nav.Link>
@@ -46,7 +52,7 @@ const CheckPage = () => {
                         <Nav.Link disabled={credits === undefined} active={mode === "timetable"} onClick={(e) => setMode("timetable")} >時間割</Nav.Link>
                     </Nav.Item>
                 </Nav>
-                <MainTab mode={mode} credits={credits} setCredits={saveCredits} rules={rules} />
+                <MainTab mode={mode} credits={credits} setCredits={saveCredits} rules={rules} classes={classes} />
             </div>
         </>
     )

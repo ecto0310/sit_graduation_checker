@@ -1,3 +1,7 @@
+export const defaultClasses: Classes = {
+    classes: []
+};
+
 export type Classes = {
     classes: Class[];
 }
