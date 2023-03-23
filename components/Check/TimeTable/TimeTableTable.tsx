@@ -1,4 +1,4 @@
-import { Credit, Credits } from '../../../interfaces/Credits';
+import { Credits } from '../../../interfaces/Credits';
 import { CreditInfo } from '../../../interfaces/Rules/Rules';
 import Table from 'react-bootstrap/Table';
 import { Button } from 'react-bootstrap';

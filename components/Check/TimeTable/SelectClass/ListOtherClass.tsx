@@ -3,8 +3,8 @@ import { CreditInfo } from '../../../../interfaces/Rules/Rules';
 import Table from 'react-bootstrap/Table';
 import { Button, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusSquare, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { days, times } from '../../../../interfaces/TimeTables';
+import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
+import { days } from '../../../../interfaces/TimeTables';
 import { useState } from 'react';
 
 type TableProps = {

@@ -1,4 +1,4 @@
-import { Form, Nav } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 import { days } from '../../../interfaces/TimeTables';
 
 type SelectDayProps = {

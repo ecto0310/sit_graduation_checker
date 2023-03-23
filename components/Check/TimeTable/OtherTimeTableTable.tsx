@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusSquare, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { days, times } from '../../../interfaces/TimeTables';
+import { days } from '../../../interfaces/TimeTables';
 
 type TableProps = {
     semester: string;

@@ -1,6 +1,4 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { Alert, Nav } from 'react-bootstrap'
+import { Alert } from 'react-bootstrap'
 import ListCredit from "./ListCredit/ListCredit";
 import ListRule from "../../components/Check/ListRule/ListRule";
 import { Credits } from "../../interfaces/Credits";

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Credit, Credits } from '../../../interfaces/Credits';
+import { Credits } from '../../../interfaces/Credits';
 import { CreditInfo } from '../../../interfaces/Rules/Rules';
 import { Classes, days, times } from '../../../interfaces/TimeTables';
 import ModalSelectClass from './ModalSelectClass';
