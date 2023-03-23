@@ -63,6 +63,16 @@ const TimeTableTable = ({ semester, credits, setCredits, creditInfo, setTime, se
                             )
                         })
                     }
+                    <tr>
+                        {
+                            <>
+                                <td colSpan={5}></td>
+                                <td>
+                                    <Button variant="primary" onClick={() => { setTime(""); setModalShow(true); }}><FontAwesomeIcon icon={faPlusSquare} /></Button>
+                                </td>
+                            </>
+                        }
+                    </tr>
                 </tbody>
             </Table>
         </>
