@@ -15,7 +15,7 @@ export const CalcMinimumGPARule = (rule: MinimumGPARule, credits: Credit[], grad
     const includeCredits = credits.filter((credit) => gradePoint.find((gradePoint) => gradePoint.grade == credit.grade) !== undefined);
     const creditCount = includeCredits.reduce((sum, credit) => sum + credit.count, 0);
     const sumGP = includeCredits.reduce((sum, credit) => sum + gradePoint.find((gradePoint) => gradePoint.grade == credit.grade)!.point * credit.count, 0);
-    const GPA = Math.round(sumGP / creditCount * 10) / 10;
+    const GPA = creditCount == 0 ? 0 : Math.round(sumGP / creditCount * 10) / 10;
     const result = isSchedule ? "unknown" : (rule.minimum <= GPA ? "pass" : "fail");
 
     return [result, GPA];
