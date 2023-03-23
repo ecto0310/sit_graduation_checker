@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useEffect } from 'react';
-import { Classes } from '../../../interfaces/TimeTables';
+import { Class, Classes } from '../../../interfaces/TimeTables';
 
 type SelectClassProps = {
     classes?: Classes;
@@ -12,10 +12,19 @@ type SelectClassProps = {
 const SelectClass = ({ classes, setClasses }: SelectClassProps) => {
 
     const loadClass = (e: React.ChangeEvent<HTMLInputElement>) => {
-        var file = e.currentTarget.files![0];
-        file.text().then(data => {
-            setClasses(JSON.parse(data));
+        const files = e.target.files ? [...Array.from(e.target.files)] : [];
+        let classes: Class[] = [];
+        let promises: Promise<void>[] = [];
+        files.forEach(file => {
+            const promise = file.text().then(text => {
+                classes = classes.concat(JSON.parse(text).classes);
+            });
+            promises.push(promise);
         });
+        Promise.all(promises)
+            .then(() => {
+                setClasses({ classes: classes });
+            })
     }
 
     useEffect(() => {
@@ -34,7 +43,7 @@ const SelectClass = ({ classes, setClasses }: SelectClassProps) => {
                     <Form.Label>授業情報ファイル</Form.Label>
                 </Col>
                 <Col sm="10">
-                    <Form.Control type="file" accept="application/json" onChange={loadClass} />
+                    <Form.Control type="file" accept="application/json" onChange={loadClass} multiple />
                 </Col>
             </Row>
         </>
