@@ -1,3 +1,7 @@
+export const defaultCredits: Credits = {
+    credits: []
+}
+
 export type Credits = {
     credits: Credit[];
 }

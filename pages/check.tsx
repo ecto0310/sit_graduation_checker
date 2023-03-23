@@ -3,18 +3,18 @@ import { useEffect, useState } from "react";
 import { Nav } from 'react-bootstrap'
 import MainTab from "../components/Check/MainTab";
 import SelectCredit from "../components/Check/SelectCredit";
-import { Credits } from "../interfaces/Credits";
-import { Rules } from "../interfaces/Rules/Rules";
+import { Credits, defaultCredits } from "../interfaces/Credits";
+import { defaultRules, Rules } from "../interfaces/Rules/Rules";
 
 const CheckPage = () => {
     const router = useRouter();
 
-    const [credits, setCredits] = useState<Credits>();
-    const [rules, setRules] = useState<Rules>();
+    const [credits, setCredits] = useState<Credits>(defaultCredits);
+    const [rules, setRules] = useState<Rules>(defaultRules);
     const [mode, setMode] = useState<string>("check");
 
     useEffect(() => {
-        if (router.query.ruleFile !== undefined && rules === undefined) {
+        if (router.query.ruleFile !== undefined && rules === defaultRules) {
             fetch("/rules/" + router.query.ruleFile)
                 .then(response => response.json())
                 .then(data => { setRules(data) });

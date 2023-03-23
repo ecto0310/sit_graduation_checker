@@ -7,40 +7,19 @@ import TimeTable from "./TimeTable/TimeTable";
 
 type MainTabProps = {
     mode: string;
-    credits?: Credits;
+    credits: Credits;
     setCredits: (credits: Credits) => void;
-    rules?: Rules;
+    rules: Rules;
 }
 
 const MainTab = ({ mode, credits, setCredits, rules }: MainTabProps) => {
     switch (mode) {
         case "check":
-            if (rules) {
-                return <ListRule credits={credits || { credits: [] }} rules={rules} />;
-            }
-            return (
-                <Alert variant={"primary"} className="mt-1">
-                    要件情報が存在しません
-                </Alert>
-            );
+            return <ListRule credits={credits} rules={rules} />;
         case "credit":
-            if (credits) {
-                return <ListCredit credits={credits || { credits: [] }} setCredits={setCredits} creditInfo={rules?.creditInfo!} />;
-            }
-            return (
-                <Alert variant={"primary"} className="mt-1">
-                    単位情報が存在しません
-                </Alert>
-            );
+            return <ListCredit credits={credits} setCredits={setCredits} creditInfo={rules?.creditInfo!} />;
         case "timetable":
-            if (credits) {
-                return <TimeTable credits={credits || { credits: [] }} setCredits={setCredits} creditInfo={rules?.creditInfo!} />;
-            }
-            return (
-                <Alert variant={"primary"} className="mt-1">
-                    単位情報が存在しません
-                </Alert>
-            );
+            return <TimeTable credits={credits} setCredits={setCredits} creditInfo={rules?.creditInfo!} />;
     }
     return (
         <Alert variant={"primary"} className="mt-1">

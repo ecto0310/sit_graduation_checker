@@ -2,6 +2,21 @@ import { MinimumCreditRule } from './MinimumCreditRule';
 import { MinimumGPARule } from './MinimumGPARule';
 import { MaximumCreditFilter } from './MaximumCreditFilter';
 
+export const defaultRules: Rules = {
+    title: '',
+    creditInfo: {
+        groups: [],
+        divisions: [],
+        gradePoint: [],
+        passGrade: [],
+        failGrade: [],
+        unknownGrade: [],
+        startYear: 0
+    },
+    rules: [],
+    filters: []
+}
+
 export type Rules = {
     title: string;
     creditInfo: CreditInfo;
