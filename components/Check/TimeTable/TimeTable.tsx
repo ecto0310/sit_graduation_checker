@@ -4,6 +4,7 @@ import { CreditInfo } from '../../../interfaces/Rules/Rules';
 import { Classes, days, times } from '../../../interfaces/TimeTables';
 import ModalSelectClass from './ModalSelectClass';
 import OtherTimeTableTable from './OtherTimeTableTable';
+import SelectClass from './SelectClass';
 import SelectDay from './SelectDay';
 import SelectSemester from './SelectSemester';
 import TimeTableTable from './TimeTableTable';
@@ -24,6 +25,7 @@ const TimeTable = ({ credits, setCredits, creditInfo }: TimeTableProps) => {
     return (
         <>
             <SelectSemester selected_semester={semester} setSemester={setSemester} startYear={creditInfo.startYear} />
+            <SelectClass classes={classes} setClasses={setClasses} />
             <SelectDay selected_day={day} setDay={setDay} />
             {
                 days.includes(day) ?

@@ -25,9 +25,9 @@
             "F"
         ],
         "unknownGrade": [
-            "G",
             "#",
-            "-"
+            "-",
+            "G"
         ],
         "startYear": 2021
     },

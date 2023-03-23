@@ -7,8 +7,6 @@ export type Class = {
     name: string;
     division: string;
     count: number;
-    day: string;
-    time: string;
 }
 
 export const times = ["1限", "2限", "3限", "4限", "5限", "6限"];

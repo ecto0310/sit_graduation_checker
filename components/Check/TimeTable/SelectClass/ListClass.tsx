@@ -4,33 +4,34 @@ import Table from 'react-bootstrap/Table';
 import { Button, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
-import { days } from '../../../../interfaces/TimeTables';
+import { Classes, days } from '../../../../interfaces/TimeTables';
 import { useState } from 'react';
 
-type ListOtherClassProps = {
+type ListClass = {
     semester: string;
     day: string;
     time: string;
+    classes: Classes;
     credits: Credits;
     setCredits: (credits: Credits) => void;
     creditInfo: CreditInfo;
     setModalShow: (show: boolean) => void;
 }
 
-const ListOtherClass = ({ semester, day, time, credits, setCredits, creditInfo, setModalShow }: ListOtherClassProps) => {
+const ListClass = ({ semester, day, time, classes, credits, setCredits, creditInfo, setModalShow }: ListClass) => {
     const [isSchedule, setIsSchedule] = useState<boolean>(false);
 
-    const getCreditIndexs = (): number[] => {
+    const getClassesIndexs = (): number[] => {
         let indexs: number[] = [];
-        credits.credits.forEach((credit, index) => {
-            if ((credit.semester == "" || credit.semester == semester) && !days.includes(credit.day) && (!isSchedule || creditInfo.unknownGrade.includes(credit.grade))) {
-                indexs.push(index)
+        classes.classes.forEach((e, index) => {
+            if (credits.credits.every(credit => credit.name != e.name)) {
+                indexs.push(index);
             }
         });
         return indexs;
     }
 
-    const creditIndexs = getCreditIndexs();
+    const classIndexs = getClassesIndexs();
 
     return (
         <>
@@ -42,23 +43,23 @@ const ListOtherClass = ({ semester, day, time, credits, setCredits, creditInfo, 
                         <th>区分</th>
                         <th>科目名</th>
                         <th>単位数</th>
-                        <th>評価</th>
                         <th>編集</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        creditIndexs.map((creditIndex, index) => {
-                            const credit = credits.credits[creditIndex];
+                        classIndexs.map((classIndex, index) => {
+                            const e = classes.classes[classIndex];
                             return (
                                 <tr key={index}>
-                                    <td>{credit.group}</td>
-                                    <td>{credit.division}</td>
-                                    <td>{credit.name}</td>
-                                    <td>{credit.count}</td>
-                                    <td>{credit.grade}</td>
+                                    <td>{e.group}</td>
+                                    <td>{e.division}</td>
+                                    <td>{e.name}</td>
+                                    <td>{e.count}</td>
                                     <td>
-                                        <Button variant="primary" onClick={() => { credits.credits[creditIndex] = { ...credits.credits[creditIndex], semester: semester, day: day, time: time }; setCredits({ ...credits, credits: credits.credits }); setModalShow(false); }}><FontAwesomeIcon icon={faPlusSquare} /></Button>
+                                        <Button variant="primary" onClick={() => {
+                                            credits.credits.push({ group: e.group, division: e.division, name: e.name, count: e.count, grade: creditInfo.unknownGrade[0], semester: semester, day: day, time: time }); setCredits({ ...credits, credits: credits.credits }); setModalShow(false);
+                                        }}><FontAwesomeIcon icon={faPlusSquare} /></Button>
                                     </td>
                                 </tr>
                             )
@@ -70,4 +71,4 @@ const ListOtherClass = ({ semester, day, time, credits, setCredits, creditInfo, 
     )
 }
 
-export default ListOtherClass;
+export default ListClass;

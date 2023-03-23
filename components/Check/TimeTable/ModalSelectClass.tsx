@@ -2,6 +2,7 @@ import { Accordion, Modal } from 'react-bootstrap';
 import { Credits } from '../../../interfaces/Credits';
 import { CreditInfo } from '../../../interfaces/Rules/Rules';
 import { Classes } from '../../../interfaces/TimeTables';
+import ListClass from './SelectClass/ListClass';
 import ListOtherClass from './SelectClass/ListOtherClass';
 
 type ModalClassProps = {
@@ -36,6 +37,7 @@ const ModalSelectClass = ({ modalShow, setModalShow, classes, semester, day, tim
                         <Accordion.Item eventKey="1">
                             <Accordion.Header>授業データ</Accordion.Header>
                             <Accordion.Body>
+                                <ListClass semester={semester} day={day} time={time} classes={classes} credits={credits} setCredits={setCredits} creditInfo={creditInfo} setModalShow={setModalShow} />
                             </Accordion.Body>
                         </Accordion.Item>
                     </Accordion>

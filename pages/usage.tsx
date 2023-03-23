@@ -35,6 +35,33 @@ const UsagePage = () => {
                         トップページにて条件データを選択し、移動先ページにてcredits.jsonを単位データとして読み込ませます。
                     </li>
                 </ol>
+                <br />
+                <ol>
+                    <li>
+                        単位一覧情報をシラバスからエクスポートするにはTampermonkeyをインストールする必要があります。
+                    </li>
+                    <Link href="https://www.tampermonkey.net/" target="_blank" rel="noopener noreferrer"><Button variant="primary">Tampermonkey公式ページ</Button></Link>
+
+                    <li>
+                        エクスポート用のスクリプトをインストールします。
+                    </li>
+                    <Link href="https://github.com/ecto0310/sit_graduation_checker/raw/main/public/exporter.user.js" target="_blank" rel="noopener noreferrer"><Button variant="primary">エクスポート用スクリプト</Button></Link>
+
+                    <li>
+                        シラバスに移動し、エクスポートが必要なページに移動します。
+                    </li>
+                    <Link href={"http://syllabus.sic.shibaura-it.ac.jp/index.html"} target="_blank" rel="noopener noreferrer">
+                        <Button variant="primary">移動</Button>
+                    </Link>
+
+                    <li>
+                        移動先のページの最下部の「単位情報を出力する(SIT Graduation Checker)」をクリックしてjsonをダウンロードします。
+                    </li>
+                    <li>
+                        時間割ページにて単位一覧情報を読み込ませます。
+                    </li>
+                </ol>
+
             </div>
         </>
     )
