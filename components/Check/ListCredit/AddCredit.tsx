@@ -2,8 +2,8 @@ import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Credit } from '../../types/Credits';
-import { CreditInfo } from '../../types/Rules/Rules';
+import { Credit } from '../../../interfaces/Credits';
+import { CreditInfo } from '../../../interfaces/Rules/Rules';
 
 type AddCreditProps = {
     addCredit: (credit: Credit) => void;
@@ -17,9 +17,8 @@ const AddCredit = ({ addCredit, creditInfo }: AddCreditProps) => {
     const [name, setName] = useState<string>("");
     const [division, setDivision] = useState<string>(creditInfo.divisions[0]);
     const [count, setCount] = useState<number>(2);
-    const [grade, setGrade] = useState<string>(grades[0]);
-    const [period, setPeriod] = useState<string>("未定");
-
+    const [grade, setGrade] = useState<string>(creditInfo.unknownGrade[0]);
+    const [semester, setSemester] = useState<string>("");
 
     return (
         <>
@@ -46,9 +45,18 @@ const AddCredit = ({ addCredit, creditInfo }: AddCreditProps) => {
                     </Form.Select>
                 </td>
                 <td>
-                    <Form.Control value={period} onChange={(e) => setPeriod(e.target.value)} />
+                    <Form.Select className='mb-1' value={semester} onChange={e => setSemester(e.target.value)} >
+                        <option key={-1} value={""}></option>
+                        {["", ...Array(16)].map((v, k) => + k).map((data, index) => {
+                            const year = (creditInfo.startYear + Math.floor(data / 2)) + "年度";
+                            const semester = (data % 2 == 0 ? "前期" : "後期");
+                            return <option key={index} value={year + semester}>{year + semester}</option>;
+                        })}
+                    </Form.Select>
                 </td>
-                <td><Button variant="primary" onClick={() => addCredit({ group: group, name: name, division: division, count: count, grade: grade, period: period })}><FontAwesomeIcon icon={faPlusSquare} /></Button></td>
+                <td>
+                </td>
+                <td><Button variant="primary" onClick={() => addCredit({ group: group, name: name, division: division, count: count, grade: grade, semester: semester, day: "", time: "" })}><FontAwesomeIcon icon={faPlusSquare} /></Button></td>
             </tr>
         </>
     )

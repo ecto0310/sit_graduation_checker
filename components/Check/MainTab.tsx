@@ -1,38 +1,27 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { Alert, Nav } from 'react-bootstrap'
-import ListCredit from "../../components/Check/ListCredit";
-import ListRule from "../../components/Check/ListRule";
-import { Credits } from "../../types/Credits";
-import { Rules } from "../../types/Rules/Rules";
+import { Alert } from 'react-bootstrap'
+import ListCredit from "./ListCredit/ListCredit";
+import ListRule from "../../components/Check/ListRule/ListRule";
+import { Credits } from "../../interfaces/Credits";
+import { Rules } from "../../interfaces/Rules/Rules";
+import TimeTable from "./TimeTable/TimeTable";
+import { Classes } from '../../interfaces/TimeTables';
 
 type MainTabProps = {
     mode: string;
-    credits?: Credits;
+    credits: Credits;
     setCredits: (credits: Credits) => void;
-    rules?: Rules;
+    rules: Rules;
+    classes: Classes;
 }
 
-const MainTab = ({ mode, credits, setCredits, rules }: MainTabProps) => {
+const MainTab = ({ mode, credits, setCredits, rules, classes }: MainTabProps) => {
     switch (mode) {
         case "check":
-            if (rules) {
-                return <ListRule credits={credits || { credits: [] }} rules={rules} />;
-            }
-            return (
-                <Alert variant={"primary"} className="mt-1">
-                    要件情報が存在しません
-                </Alert>
-            );
+            return <ListRule credits={credits} rules={rules} />;
         case "credit":
-            if (credits) {
-                return <ListCredit credits={credits || { credits: [] }} setCredits={setCredits} creditInfo={rules?.creditInfo!} />;
-            }
-            return (
-                <Alert variant={"primary"} className="mt-1">
-                    単位情報が存在しません
-                </Alert>
-            );
+            return <ListCredit credits={credits} setCredits={setCredits} creditInfo={rules?.creditInfo!} />;
+        case "timetable":
+            return <TimeTable credits={credits} setCredits={setCredits} creditInfo={rules?.creditInfo!} classes={classes} />;
     }
     return (
         <Alert variant={"primary"} className="mt-1">

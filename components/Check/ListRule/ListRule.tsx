@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import Table from 'react-bootstrap/Table';
-import { Credit, Credits } from '../../types/Credits';
-import { Rules } from '../../types/Rules/Rules';
+import { Credit, Credits } from '../../../interfaces/Credits';
+import { Rules } from '../../../interfaces/Rules/Rules';
 import { FilterMaximumCredit } from './Filter/FilterMaximumCredit';
 import ResultMark from './ResultMark';
 import MinimumCreditRule, { CalcMinimumCreditRule } from './Rule/MinimumCreditRule';
 import MinimumGPARule, { CalcMinimumGPARule } from './Rule/MinimumGPARule';
 import Form from "react-bootstrap/Form";
-import { Result } from '../../types/Result';
+import { Result } from '../../../interfaces/Result';
 
 type ListRuleProps = {
     credits: Credits;
@@ -37,10 +37,10 @@ const ListRule = ({ credits, rules }: ListRuleProps) => {
             return 1;
         });
         validCredits = validCredits.filter((validCredit, i) => {
-            if(i==0){
+            if (i == 0) {
                 return true;
             }
-            return validCredit.name != validCredits[i-1].name;
+            return validCredit.name != validCredits[i - 1].name;
         });
         rules.filters?.forEach((filter) => {
             if (filter.type == "maximumCredit") {
