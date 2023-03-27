@@ -15,8 +15,22 @@ type ListCreditProps = {
 const ListCredit = ({ credits, setCredits, creditInfo }: ListCreditProps) => {
     const grades = creditInfo.passGrade.concat(creditInfo.failGrade).concat(creditInfo.unknownGrade)
 
+    const exportCredits = () => {
+        const blob = new Blob(
+            [JSON.stringify({ "credits": credits })],
+            { type: 'application/json' }
+        );
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "edit_credits.json";
+        a.click();
+        window.URL.revokeObjectURL(url);
+    }
+
     return (
         <>
+            <Button className='mb-2' onClick={() => exportCredits()}>単位一覧のエクスポート</Button>
             <Table striped bordered>
                 <thead>
                     <tr>
