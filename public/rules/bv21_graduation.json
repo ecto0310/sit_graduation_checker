@@ -1,265 +1,228 @@
 {
-    "title": "2021年度入学 システム理工学部 数理科学科 卒業要件",
-    "creditInfo": {
-        "groups": [
+  "title": "2021年度入学 システム理工学部 数理科学科 卒業要件",
+  "creditInfo": {
+    "groups": [
+      "教職科目",
+      "総合科目",
+      "英語",
+      "ドイツ語",
+      "中国語",
+      "韓国語",
+      "フランス語",
+      "スペイン語",
+      "共通科目（学部基礎）",
+      "共通科目（システム・情報）",
+      "専門"
+    ],
+    "divisions": ["必修", "選択"],
+    "passGrade": ["S", "A", "B", "C", "N"],
+    "failGrade": ["D", "F"],
+    "unknownGrade": ["#", "-", "G"],
+    "startYear": 2021
+  },
+  "rules": [
+    {
+      "type": "minimumCredit",
+      "description": "総単位数 124単位以上",
+      "targets": [
+        {
+          "type": "group",
+          "groups": [
             "教職科目",
             "総合科目",
             "英語",
+            "ドイツ語",
+            "中国語",
+            "韓国語",
+            "フランス語",
+            "スペイン語",
             "共通科目（学部基礎）",
             "共通科目（システム・情報）",
             "専門"
-        ],
-        "divisions": [
-            "必修",
-            "選択"
-        ],
-        "passGrade": [
-            "S",
-            "A",
-            "B",
-            "C",
-            "N"
-        ],
-        "failGrade": [
-            "D",
-            "F"
-        ],
-        "unknownGrade": [
-            "#",
-            "-",
-            "G"
-        ],
-        "startYear": 2021
+          ],
+          "divisions": ["必修", "選択"]
+        }
+      ],
+      "minimum": 124
     },
-    "rules": [
+    {
+      "type": "minimumCredit",
+      "description": "共通科目 58単位以上",
+      "targets": [
         {
-            "type": "minimumCredit",
-            "description": "総単位数 124単位以上",
-            "targets": [
-                {
-                    "type": "group",
-                    "groups": [
-                        "教職科目",
-                        "総合科目",
-                        "英語",
-                        "共通科目（学部基礎）",
-                        "共通科目（システム・情報）",
-                        "専門"
-                    ],
-                    "divisions": [
-                        "必修",
-                        "選択"
-                    ]
-                }
-            ],
-            "minimum": 124
-        },
-        {
-            "type": "minimumCredit",
-            "description": "共通科目 58単位以上",
-            "targets": [
-                {
-                    "type": "group",
-                    "groups": [
-                        "教職科目",
-                        "総合科目",
-                        "英語",
-                        "共通科目（学部基礎）",
-                        "共通科目（システム・情報）"
-                    ],
-                    "divisions": [
-                        "必修",
-                        "選択"
-                    ]
-                }
-            ],
-            "minimum": 58
-        },
-        {
-            "type": "minimumCredit",
-            "description": "専門科目 54単位以上",
-            "targets": [
-                {
-                    "type": "group",
-                    "groups": [
-                        "専門"
-                    ],
-                    "divisions": [
-                        "必修",
-                        "選択"
-                    ]
-                }
-            ],
-            "minimum": 54
-        },
-        {
-            "type": "minimumCredit",
-            "description": "専門科目 必修 18単位",
-            "targets": [
-                {
-                    "type": "group",
-                    "groups": [
-                        "専門"
-                    ],
-                    "divisions": [
-                        "必修"
-                    ]
-                }
-            ],
-            "minimum": 18,
-            "requiredSubjects": [
-                "基礎数理セミナー",
-                "数学基礎",
-                "数理科学セミナー",
-                "総合研究I",
-                "総合研究II",
-                "代数学I",
-                "幾何学I"
-            ]
-        },
-        {
-            "type": "minimumCredit",
-            "description": "総合科目 12単位以上",
-            "targets": [
-                {
-                    "type": "group",
-                    "groups": [
-                        "総合科目"
-                    ],
-                    "divisions": [
-                        "必修",
-                        "選択"
-                    ]
-                }
-            ],
-            "minimum": 12
-        },
-        {
-            "type": "minimumCredit",
-            "description": "英語 8単位以上",
-            "targets": [
-                {
-                    "type": "group",
-                    "groups": [
-                        "英語"
-                    ],
-                    "divisions": [
-                        "必修",
-                        "選択"
-                    ]
-                }
-            ],
-            "minimum": 8
-        },
-        {
-            "type": "minimumCredit",
-            "description": "学部基礎科目 20単位以上",
-            "targets": [
-                {
-                    "type": "group",
-                    "groups": [
-                        "共通科目（学部基礎）"
-                    ],
-                    "divisions": [
-                        "必修",
-                        "選択"
-                    ]
-                }
-            ],
-            "minimum": 20
-        },
-        {
-            "type": "minimumCredit",
-            "description": "学部基礎科目 必修 14単位",
-            "targets": [
-                {
-                    "type": "group",
-                    "groups": [
-                        "共通科目（学部基礎）"
-                    ],
-                    "divisions": [
-                        "必修"
-                    ]
-                }
-            ],
-            "minimum": 14,
-            "requiredSubjects": [
-                "微分積分学I",
-                "微分積分学II",
-                "線形代数I",
-                "線形代数II",
-                "微分方程式",
-                "解析学I",
-                "一般力学I"
-            ]
-        },
-        {
-            "type": "minimumCredit",
-            "description": "システム・情報科目 16単位以上",
-            "targets": [
-                {
-                    "type": "group",
-                    "groups": [
-                        "共通科目（システム・情報）"
-                    ],
-                    "divisions": [
-                        "必修",
-                        "選択"
-                    ]
-                }
-            ],
-            "minimum": 16
-        },
-        {
-            "type": "minimumCredit",
-            "description": "システム・情報科目 必修 12単位",
-            "targets": [
-                {
-                    "type": "group",
-                    "groups": [
-                        "共通科目（システム・情報）"
-                    ],
-                    "divisions": [
-                        "必修"
-                    ]
-                }
-            ],
-            "minimum": 12,
-            "requiredSubjects": [
-                "情報処理I",
-                "情報処理演習I",
-                "情報処理II",
-                "情報処理演習II",
-                "システム工学Ａ（システム計画方法論）",
-                "システム工学演習Ａ",
-                "システム工学Ｂ（数理計画法）",
-                "システム工学演習Ｂ"
-            ]
+          "type": "group",
+          "groups": [
+            "教職科目",
+            "総合科目",
+            "英語",
+            "ドイツ語",
+            "中国語",
+            "韓国語",
+            "フランス語",
+            "スペイン語",
+            "共通科目（学部基礎）",
+            "共通科目（システム・情報）"
+          ],
+          "divisions": ["必修", "選択"]
         }
-    ],
-    "filters": [
+      ],
+      "minimum": 58
+    },
+    {
+      "type": "minimumCredit",
+      "description": "専門科目 54単位以上",
+      "targets": [
         {
-            "type": "maximumCredit",
-            "targets": [
-                {
-                    "type": "subject",
-                    "subjects": [
-                        "体育実技（フライングディスク）",
-                        "体育実技（テニス）",
-                        "体育実技（卓球）",
-                        "体育実技（バドミントン）",
-                        "体育実技（ソフトボール）",
-                        "体育実技（バレーボール）",
-                        "体育実技（バスケットボール）",
-                        "体育実技（ゴルフI）",
-                        "体育実技（ゴルフII）",
-                        "体育実技（スキー）",
-                        "体育実技（フットサル）",
-                        "体育実技（軟式野球）"
-                    ]
-                }
-            ],
-            "maximum": 2
+          "type": "group",
+          "groups": ["専門"],
+          "divisions": ["必修", "選択"]
         }
-    ]
+      ],
+      "minimum": 54
+    },
+    {
+      "type": "minimumCredit",
+      "description": "専門科目 必修 18単位",
+      "targets": [
+        {
+          "type": "group",
+          "groups": ["専門"],
+          "divisions": ["必修"]
+        }
+      ],
+      "minimum": 18,
+      "requiredSubjects": [
+        "基礎数理セミナー",
+        "数学基礎",
+        "数理科学セミナー",
+        "総合研究I",
+        "総合研究II",
+        "代数学I",
+        "幾何学I"
+      ]
+    },
+    {
+      "type": "minimumCredit",
+      "description": "総合科目(英語科目以外) 12単位以上",
+      "targets": [
+        {
+          "type": "group",
+          "groups": [
+            "総合科目",
+            "ドイツ語",
+            "中国語",
+            "韓国語",
+            "フランス語",
+            "スペイン語"
+          ],
+          "divisions": ["必修", "選択"]
+        }
+      ],
+      "minimum": 12
+    },
+    {
+      "type": "minimumCredit",
+      "description": "英語科目 8単位以上",
+      "targets": [
+        {
+          "type": "group",
+          "groups": ["英語"],
+          "divisions": ["必修", "選択"]
+        }
+      ],
+      "minimum": 8
+    },
+    {
+      "type": "minimumCredit",
+      "description": "学部基礎科目 20単位以上",
+      "targets": [
+        {
+          "type": "group",
+          "groups": ["共通科目（学部基礎）"],
+          "divisions": ["必修", "選択"]
+        }
+      ],
+      "minimum": 20
+    },
+    {
+      "type": "minimumCredit",
+      "description": "学部基礎科目 必修 14単位",
+      "targets": [
+        {
+          "type": "group",
+          "groups": ["共通科目（学部基礎）"],
+          "divisions": ["必修"]
+        }
+      ],
+      "minimum": 14,
+      "requiredSubjects": [
+        "微分積分学I",
+        "微分積分学II",
+        "線形代数I",
+        "線形代数II",
+        "微分方程式",
+        "解析学I",
+        "一般力学I"
+      ]
+    },
+    {
+      "type": "minimumCredit",
+      "description": "システム・情報科目 16単位以上",
+      "targets": [
+        {
+          "type": "group",
+          "groups": ["共通科目（システム・情報）"],
+          "divisions": ["必修", "選択"]
+        }
+      ],
+      "minimum": 16
+    },
+    {
+      "type": "minimumCredit",
+      "description": "システム・情報科目 必修 12単位",
+      "targets": [
+        {
+          "type": "group",
+          "groups": ["共通科目（システム・情報）"],
+          "divisions": ["必修"]
+        }
+      ],
+      "minimum": 12,
+      "requiredSubjects": [
+        "情報処理I",
+        "情報処理演習I",
+        "情報処理II",
+        "情報処理演習II",
+        "システム工学Ａ（システム計画方法論）",
+        "システム工学演習Ａ",
+        "システム工学Ｂ（数理計画法）",
+        "システム工学演習Ｂ"
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "type": "maximumCredit",
+      "targets": [
+        {
+          "type": "subject",
+          "subjects": [
+            "体育実技（フライングディスク）",
+            "体育実技（テニス）",
+            "体育実技（卓球）",
+            "体育実技（バドミントン）",
+            "体育実技（ソフトボール）",
+            "体育実技（バレーボール）",
+            "体育実技（バスケットボール）",
+            "体育実技（ゴルフI）",
+            "体育実技（ゴルフII）",
+            "体育実技（スキー）",
+            "体育実技（フットサル）",
+            "体育実技（軟式野球）"
+          ]
+        }
+      ],
+      "maximum": 2
+    }
+  ]
 }
