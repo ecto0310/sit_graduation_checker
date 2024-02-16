@@ -48,7 +48,7 @@ const SelectRule = () => {
                 setCandidateYear(
                   presetRuleFiles!.years!.find((year) => {
                     return year.name == e.target.value;
-                  })
+                  }),
                 )
               }
             >
@@ -72,7 +72,7 @@ const SelectRule = () => {
                 setCandidateDepartment(
                   candidateYear?.departments.find((department) => {
                     return department.name == e.target.value;
-                  })
+                  }),
                 )
               }
             >
@@ -96,7 +96,7 @@ const SelectRule = () => {
                 setRuleFile(
                   candidateDepartment?.ruleFiles.find((ruleFile) => {
                     return ruleFile.file == e.target.value;
-                  })
+                  }),
                 )
               }
             >

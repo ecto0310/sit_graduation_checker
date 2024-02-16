@@ -1,5 +1,5 @@
 export type MinimumGPARule = {
-    type: "minimumGPA";
-    description: string;
-    minimum: number;
-}
+  type: "minimumGPA";
+  description: string;
+  minimum: number;
+};

@@ -1,18 +1,18 @@
 export type PresetRuleFiles = {
-    years: Year[];
-}
+  years: Year[];
+};
 
 export type Year = {
-    name: string;
-    departments: Department[];
-}
+  name: string;
+  departments: Department[];
+};
 
 export type Department = {
-    name: string;
-    ruleFiles: RuleFile[];
-}
+  name: string;
+  ruleFiles: RuleFile[];
+};
 
 export type RuleFile = {
-    name: string;
-    file: string;
-}
+  name: string;
+  file: string;
+};
