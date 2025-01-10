@@ -1,6 +1,6 @@
 import { Credit } from "../../../../interfaces/Credits";
 import { GradePoint } from "../../../../interfaces/Rules/Rules";
-import { MinimumGPARule } from "../../../../interfaces/Rules/MinimumGPARule";
+import { type MinimumGPARule } from "../../../../interfaces/Rules/MinimumGPARule";
 import ResultMark from "../ResultMark";
 import { Result } from "../../../../interfaces/Result";
 
